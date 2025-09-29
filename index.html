@@ -237,11 +237,53 @@
   opacity: 1;
   transition: all 0.3s ease;
 }
+  #popup {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
 
+  #popup.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
 
-  
+  #popup.show div {
+    transform: scale(1);
+  }
 
+  #popup-icon.text-green-500 {
+    color: #4ade80; 
+  }
 
+  #popup-icon.text-red-500 {
+    color: #f87171; 
+  }
+
+  #popup div {
+    transition: all 0.4s ease;
+  }
+
+  @media (max-width: 640px) {
+    #popup div {
+      flex-direction: column;
+      gap: 3;
+      padding: 20px;
+    }
+    #popup-icon {
+      font-size: 4rem;
+    }
+    #popup-text {
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
 
   </style>
 </head>
@@ -475,14 +517,34 @@
       I’m open to discussing new projects, creative ideas, or opportunities. Reach out via the form or connect with me through social media.
     </p>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-      <form action="{{ route('send.message') }}" method="POST" class="space-y-6 bg-[rgba(255,255,255,0.08)] p-8 rounded-2xl backdrop-blur-lg border border-[rgba(255,255,255,0.1)] shadow-lg hover:shadow-2xl transition-shadow duration-500">
-        <input type="text" name="name" placeholder="Your Name"  class="w-full p-4 rounded-lg bg-[#182B31]/50 border border-[#B4C3CC]/30 text-[#F4FEFE] focus:outline-none" required>
-        <input type="email" name="email" placeholder="Your Email"  class="w-full p-4 rounded-lg bg-[#182B31]/50 border border-[#B4C3CC]/30 text-[#F4FEFE] focus:outline-none" required>
-        <textarea name="message" placeholder="Your Message" class="w-full p-4 rounded-lg bg-[#182B31]/50 border border-[#B4C3CC]/30 text-[#F4FEFE] focus:outline-none h-40" required></textarea>
-        <button type="submit" class="w-full px-6 py-3 rounded-full font-medium btn-glow bg-[#F4FEFE] text-[#1E3A46] hover:scale-105 transition-transform">
-          Send Message
-        </button>
-      </form>
+     <form id="contact-form" onsubmit="sendEmail(event)" 
+      class="space-y-6 bg-[rgba(255,255,255,0.08)] p-8 rounded-2xl backdrop-blur-lg border border-[rgba(255,255,255,0.1)] shadow-lg hover:shadow-2xl transition-shadow duration-500">
+  
+  <input type="text" name="user_name" placeholder="Your Name"  
+         class="w-full p-4 rounded-lg bg-[#182B31]/50 border border-[#B4C3CC]/30 text-[#F4FEFE] focus:outline-none" required>
+
+  <input type="email" name="user_email" placeholder="Your Email"  
+         class="w-full p-4 rounded-lg bg-[#182B31]/50 border border-[#B4C3CC]/30 text-[#F4FEFE] focus:outline-none" required>
+
+  <textarea name="message" placeholder="Your Message" 
+            class="w-full p-4 rounded-lg bg-[#182B31]/50 border border-[#B4C3CC]/30 text-[#F4FEFE] focus:outline-none h-40" required></textarea>
+
+  <button type="submit" id="send-btn"
+          class="w-full px-6 py-3 rounded-full font-medium btn-glow bg-[#F4FEFE] text-[#1E3A46] hover:scale-105 transition-transform flex items-center justify-center space-x-2">
+    <svg class="spinner animate-spin h-5 w-5 text-[#1E3A46] hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+    </svg>
+    <span class="btn-text">Send Message</span>
+  </button>
+</form>
+<div id="popup" class="fixed inset-0 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-50">
+  <div class="bg-[#1E3A46]/90 backdrop-blur-xl rounded-3xl px-10 py-8 flex items-center gap-6 shadow-2xl transform scale-75 transition-transform duration-300">
+    <div id="popup-icon" class="text-6xl font-extrabold"></div>
+    <div id="popup-text" class="text-white text-xl font-semibold max-w-xs"></div>
+  </div>
+</div>
+
       <div class="flex flex-col justify-start gap-2">
         <div class="grid grid-cols-1 gap-4">
           <div class="card p-6 flex items-center gap-4 hover:scale-105 transition-transform hover:shadow-lg">
@@ -520,7 +582,63 @@
   </footer>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
+      (function() {
+    emailjs.init("2iAReO0m4_oNZYz8I"); 
+  })();
+
+  function sendEmail(e) {
+    e.preventDefault();
+
+    const btn = document.getElementById("send-btn");
+    const btnText = btn.querySelector(".btn-text");
+    const spinner = btn.querySelector(".spinner");
+
+  
+    btn.disabled = true;
+    btnText.classList.add("hidden");
+    spinner.classList.remove("hidden");
+
+    emailjs.sendForm("service_3usziba", "template_a7mzghc", "#contact-form")
+      .then(function() {
+        spinner.classList.add("hidden");
+        btnText.classList.remove("hidden");
+        btnText.innerText = "Send Message";
+        btn.disabled = false;
+
+        document.getElementById("contact-form").reset();
+        showPopup(true, "Pesan berhasil terkirim!");
+      }, function(error) {
+        spinner.classList.add("hidden");
+        btnText.classList.remove("hidden");
+        btn.disabled = false;
+        showPopup(false, `Gagal mengirim: ${error.text}`);
+      });
+  }
+
+function showPopup(success, message) {
+    const popup = document.getElementById("popup");
+    const icon = document.getElementById("popup-icon");
+    const text = document.getElementById("popup-text");
+
+    text.innerText = message;
+
+    if(success){
+      icon.innerHTML = "✔"; 
+      icon.classList.remove("text-red-500");
+      icon.classList.add("text-green-500");
+    } else {
+      icon.innerHTML = "✖"; 
+      icon.classList.remove("text-green-500");
+      icon.classList.add("text-red-500");
+    }
+
+    popup.classList.add("show");
+    setTimeout(() => {
+      popup.classList.remove("show");
+    }, 2500);
+  }
     let lastScroll = 0;
     const navbar = document.getElementById('navbar');
 
