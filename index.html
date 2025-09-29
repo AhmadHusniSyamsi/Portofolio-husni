@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/images/profile/Screenshot 2025-09-29 204916.png">
+  <title>Portofolio Husni</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-dymN6z8V++6Yg+UMz/PLawV9lVfQ1z1zjCgkS0w6u8Q1kg7jVObJRa+j0gKxhzPn7aQXWmJb9b0W5Fad2p7v0A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+
+
+
+
+  <style>
+    body {
+      font-family: 'Poppins', 'Inter', sans-serif;
+      background: linear-gradient(-45deg, #182B31, #1E3A46, #58717D, #B4C3CC, #F4FEFE);
+      background-size: 400% 400%;
+      animation: gradientFlow 18s ease infinite;
+      color: #F4FEFE;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, .gradient-text {
+  font-family: 'Inter', 'Poppins', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;}
+ /* Warna tombol navigasi */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #F4FEFE !important; /* putih */
+  text-shadow: 0 0 12px rgba(244, 254, 254, 0.7);
+}
+
+/* Warna pagination bullet */
+.swiper-pagination-bullet {
+  background: rgba(244, 254, 254, 0.5) !important;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+.swiper-pagination-bullet-active {
+  background: #F4FEFE !important;
+  box-shadow: 0 0 12px rgba(244, 254, 254, 0.9);
+  transform: scale(1.3);
+}
+
+
+
+
+    /* Background bergerak */
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Navbar */
+    .glass-navbar {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      transition: top 0.4s ease, background 0.4s ease;
+    }
+
+    /* Nav Hover */
+    .nav-link {
+      position: relative;
+      padding-bottom: 4px;
+      transition: color 0.3s ease;
+    }
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      left: 0;
+      bottom: 0;
+      background: #F4FEFE;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Text Gradient */
+    .gradient-text {
+      background: linear-gradient(90deg, #F4FEFE, #B4C3CC, #58717D);
+      background-size: 200% auto;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: shimmer 8s linear infinite;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 0% center; }
+      100% { background-position: 200% center; }
+    }
+
+    /* Tombol Glow */
+    .btn-glow {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+    .btn-glow::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 200%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: all 0.5s ease;
+    }
+    .btn-glow:hover::before {
+      left: 100%;
+    }
+    .btn-glow:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(255,255,255,0.4);
+    }
+
+    /* Card Modern */
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      transition: all 0.4s ease;
+    }
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+    }
+
+    /* Fade-up Animation */
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up {
+      opacity: 0;
+      animation: fade-up 1s ease forwards;
+    }
+
+    /* Floating animation untuk hero image */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    .float {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    /* Smooth gradient transition antar section */
+    .smooth-section {
+      background: linear-gradient(to bottom, rgba(30,58,70,0.0), rgba(30,58,70,0.7) 50%, rgba(24,43,49,0.9) 100%);
+    }
+    .smooth-section1 {
+      background: linear-gradient(to bottom,  rgba(24,43,49,0.9), rgba(30,58,70,0.7) 50%, rgba(24,43,49,0.9) 100%);
+    }
+     .smooth-section2 {
+      background: linear-gradient(to bottom,  rgba(24,43,49,0.9),rgba(24,43,49,0.9) 50%, rgba(24,43,49,0.9) 100%);
+    }
+/* Ganti seluruh blok CSS 'splash-h' sampai 'glowLoop' dengan kode di bawah ini: */
+
+/* Import font elegan */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+/* Style untuk huruf 'H' */
+.splash-h {
+    font-family: 'Playfair Display', serif;
+    font-size: 8rem; /* Lebih proporsional dari 140px */
+    font-weight: 700;
+    letter-spacing: 0.2em; /* Spasi huruf lebih elegan */
+    text-transform: uppercase;
+    position: relative;
+    
+    /* Efek transparan dengan stroke */
+    color: transparent;
+    -webkit-text-stroke: 1.5px #F4FEFE; /* Stroke lebih tipis */
+    
+    /* Gradient sebagai warna utama */
+    background: linear-gradient(90deg, #F4FEFE, #B4C3CC, #58717D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Animasi Baru: Gabungan Fade In, Scale, dan Denyutan Glow */
+    opacity: 0;
+    transform: scale(0.8);
+    animation: 
+        fadeInScale 0.8s forwards ease-out, /* Masuk dengan zoom halus */
+        fillGradient 2.0s forwards, /* Mengisi warna/gradient */
+        floatPulse 3s ease-in-out infinite; /* Denyutan glow halus */
+}
+
+/* Animasi untuk Tagline */
+.splash-tagline {
+    opacity: 0;
+    color: #B4C3CC;
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    animation: fade-up 1s ease-out 1.5s forwards; /* Muncul setelah 'H' selesai */
+}
+
+/* 1. Animasi Masuk (Scale & Opacity) */
+@keyframes fadeInScale {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* 2. Animasi Mengisi Warna (dari stroke ke terisi gradient) */
+@keyframes fillGradient {
+    0% { background-position: 0% center; -webkit-text-fill-color: transparent; }
+    40% { -webkit-text-fill-color: transparent; }
+    100% { background-position: 100% center; -webkit-text-fill-color: unset; }
+}
+
+/* 3. Animasi Denyutan Glow Halus */
+@keyframes floatPulse {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(244,254,254,0.5), 0 0 20px rgba(88,113,125,0.4);
+    }
+    50% {
+        text-shadow: 0 0 15px rgba(244,254,254,0.9), 0 0 30px rgba(88,113,125,0.7);
+    }
+}
+
+/* 4. Animasi Keluar (Fade Out & Zoom Out) */
+.splash-fade {
+    opacity: 0;
+    transform: scale(1.1);
+    transition: opacity 0.8s ease-in, transform 0.8s ease-in; /* Transisi keluar yang halus */
+}
+
+.skill-icon {
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+.skill-icon:hover {
+  transform: scale(1.2) rotate(8deg);
+  filter: drop-shadow(0 0 15px rgba(255,255,255,0.6));
+}
+.skill-icon i {
+  animation: floatIcon 4s ease-in-out infinite;
+}
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+#project-modal .modal-enter {
+  transform: scale(0.9);
+  opacity: 0;
+}
+#project-modal .modal-enter-active {
+  transform: scale(1);
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+
+  
+
+
+
+  </style>
+</head>
+<body class="scroll-smooth">
+  <div id="splash-screen" class="fixed inset-0 flex items-center justify-center bg-[#182B31] z-50">
+  <h1 class="splash-h">H</h1>
+</div>
+  <header id="navbar" class="fixed w-full z-30 glass-navbar top-0">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold gradient-text">Husni</h1>
+      <nav class="space-x-8 hidden md:flex font-medium text-[#F4FEFE]">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">My Skills</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Hero Section ===== -->
+  <section id="home" class="min-h-screen flex flex-col md:flex-row justify-center items-center text-center px-6 pt-28 md:pt-0.">
+    <div class="md:w-1/2 fade-up">
+      <h1 class="text-5xl md:text-6xl font-bold mb-6 gradient-text">
+        Hi, I'm Husni Syamsi
+      </h1>
+      <p class="text-lg md:text-xl text-[#F4FEFE] max-w-xl mx-auto">
+    "Specializing in creating innovative, scalable technology solutions to solve complex challenges."
+      </p>
+      <div class="mt-8 flex justify-center gap-6">
+        <a href="#projects" class="px-8 py-3 rounded-full text-lg font-medium btn-glow bg-[#F4FEFE] text-[#1E3A46]">
+          Explore My Work
+        </a>
+        <a href="#contact" class="px-8 py-3 rounded-full text-lg font-medium btn-glow border border-[#F4FEFE] text-[#F4FEFE]">
+          Contact Me
+        </a>
+      </div>
+    </div>
+   <div class="md:w-1/2 mt-10 md:mt-0 fade-up delay-200">
+  <div class="relative group mx-auto w-[400px] h-[400px]">
+    <div class="absolute -inset-3 rounded-full
+                bg-gradient-to-tr from-[#F4FEFE] via-[#B4C3CC] to-[#58717D] 
+                opacity-60 blur-2xl group-hover:opacity-90 group-hover:blur-3xl 
+                transition-all duration-700"></div>
+    <div class="absolute -inset-1 rounded-full 
+                bg-gradient-to-tr from-[#B4C3CC]/40 via-[#F4FEFE]/30 to-[#58717D]/40 
+                opacity-50 blur-md"></div>
+
+    <!-- Foto Profil -->
+    <div class="relative w-full h-full rounded-full overflow-hidden 
+                border-4 border-[#F4FEFE]/30
+                shadow-[0_20px_40px_rgba(0,0,0,0.4),0_0_80px_rgba(244,254,254,0.3)]
+                group-hover:scale-105 group-hover:shadow-[0_25px_50px_rgba(0,0,0,0.6),0_0_100px_rgba(244,254,254,0.4)]
+                transition-all duration-700 float">
+      <img src="/images/profile/WhatsApp Image 2025-09-28 at 14.52.23_1e9d46dc.jpg" 
+           alt="Profile Picture" 
+           class="w-full h-full object-cover">
+    </div>
+  </div>
+</div>
+  </section>
+
+  <section id="skills" class="py-20 px-6">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-14 gradient-text fade-up">My Skills</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card p-6 fade-up">
+          <h3 class="text-xl font-semibold text-[#F4FEFE] mb-3">Internet Of Things Expertt</h3>
+          <p class="text-[#B4C3CC]">Developing IoT solutions that combine innovation and functionality.</p>
+        </div>
+        <div class="card p-6 fade-up delay-100">
+          <h3 class="text-xl font-semibold text-[#F4FEFE] mb-3">Web Development</h3>
+          <p class="text-[#B4C3CC]">Optimized websites, simple and reliable..</p>
+        </div>
+        <div class="card p-6 fade-up delay-200">
+          <h3 class="text-xl font-semibold text-[#F4FEFE] mb-3">Artificial Intelligence Development</h3>
+          <p class="text-[#B4C3CC]">Designing intelligent systems that learn, adapt, and optimize solutions.</p>
+        </div>
+      </div>
+    </div>
+    <!-- ===== Skills Logo  ===== -->
+<div class="mt-16 fade-up">
+  <div class="flex flex-wrap justify-center gap-10">
+    <div class="skill-icon group">
+      <i class="fab fa-html5 text-6xl text-orange-500"></i>
+    </div>
+    <div class="skill-icon group">
+      <i class="fab fa-css3-alt text-6xl text-blue-500"></i>
+    </div>
+    <div class="skill-icon group">
+      <i class="fab fa-js text-6xl text-yellow-400"></i>
+    </div>
+    <div class="skill-icon group">
+      <i class="fab fa-python text-6xl text-blue-400"></i>
+    </div>
+    <div class="skill-icon group">
+      <i class="fab fa-laravel text-6xl text-red-500"></i>
+    </div>
+    <div class="skill-icon group">
+      <i class="fab fa-github text-6xl text-gray-300"></i>
+    </div>
+    <div class="skill-icon group">
+      <i class="fas fa-robot text-6xl text-green-400"></i>
+    </div>
+    <div class="skill-icon group">
+      <i class="fas fa-wifi text-6xl text-teal-400"></i>
+    </div>
+     <div class="skill-icon group">
+      <i class="fas fa-microchip text-6xl text-purple-400"></i>
+    </div>
+    <div class="skill-icon group">
+      <i class="fas fa-cloud text-6xl text-sky-400"></i>
+    </div>
+  </div>
+</div>
+
+  </section>
+<!-- ===== Projects Section ===== -->
+<section id="projects" class="py-20 px-6 smooth-section">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-14 gradient-text fade-up">Featured Projects</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- ===== Project 1 ===== -->
+      <div class="card overflow-hidden fade-up relative group">
+        <div class="relative w-full h-48 overflow-hidden">
+          <img src="/images/profile/Screenshot 2025-09-27 132113.png"
+               alt="Project 1 Thumbnail"
+               class="w-full h-48 object-cover">
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-[#F4FEFE]">Automatic Crossing</h3>
+          <p class="text-[#B4C3CC] text-sm"> Sistem penyeberangan jalan otomatis berbasis kamera dan AI untuk mendeteksi pejalan kaki </p>
+          <button onclick="openModal('Automatic Crossing', [
+                    '/images/profile/Screenshot 2025-09-27 132113.png',
+                    '/images/profile/Screenshot 2025-09-27 132157.png',
+                    '/images/project1/Screenshot 2025-09-29 190511.png',
+                    '/images/project1/Screenshot 2025-09-29 190353.png',
+                    '/images/project1/Screenshot 2025-09-29 190443.png'
+                  ],  'Sistem ini menggunakan computer vision (YOLOV8) untuk mendeteksi pejalan kaki secara otomatis berdasarkan klasifikasi dan menentukan durasi lampu merah . '
+                  +'Sistem ini juga menggunakan sensor ultrasonic untuk mendeteksi jarak pengguna jalan apakah ingin menyeberang atau tidak dan juga sensor pir untuk mendeteksi gerakan'
+      + 'Fitur meliputi deteksi dewasa, anak-anak, dan pengguna kursi roda, toggle kamera real-time, '
+      + 'pencatatan log, hingga dashboard statistik harian & bulanan. '
+      + 'Dirancang untuk mendukung keselamatan penyeberangan bagi pengguna jalan dengan teknologi modern.')"
+                  class="mt-3 inline-block px-6 py-2 btn-glow text-sm bg-[#F4FEFE] text-[#1E3A46] rounded-full">
+            View Project
+          </button>
+        </div>
+      </div>
+
+      <!-- ===== Project 2 ===== -->
+      <div class="card overflow-hidden fade-up delay-100 relative group">
+        <div class="relative w-full h-48 overflow-hidden">
+          <img src="/images/profile/Screenshot 2025-09-27 131811.png"
+               alt="Project 2 Thumbnail"
+               class="w-full h-48 object-cover">
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-[#F4FEFE]">Aviation monitoring </h3>
+          <p class="text-[#B4C3CC] text-sm"> Sistem monitoring avionik dan uji performa navigasi penerbangan (DVOR, DME, ILS, Radar). </p>
+          <button onclick="openModal('Aviation monitoring and Perfomance Check', [
+                    '/images/profile/Screenshot 2025-09-27 131811.png',
+                    '/images/profile/Screenshot 2025-09-27 131606.png',
+                    '/images/project2/Screenshot 2025-09-29 194958.png',
+                    '/images/project2/Screenshot 2025-09-29 195126.png',
+                    '/images/project2/Screenshot 2025-09-29 195043.png',
+                    '/images/project2/Screenshot 2025-09-29 195451.png',
+                    '/images/project2/Screenshot 2025-09-29 195230.png'
+                  ], 'Platform ini dirancang untuk memonitor dan mengevaluasi sistem navigasi penerbangan '
+        + '(DVOR, DME, ILS, Radar). Data ground check dapat direkam, divisualisasikan dalam grafik performa, '
+        + 'dan diekspor ke laporan PDF/CSV. Sistem mendukung inspeksi berkala, analisis performa, serta '
+        + 'peningkatan keselamatan penerbangan.')"
+                  class="mt-3 inline-block px-6 py-2 btn-glow text-sm bg-[#F4FEFE] text-[#1E3A46] rounded-full">
+            View Project
+          </button>
+        </div>
+      </div>
+
+      <!-- ===== Project 3 ===== -->
+      <div class="card overflow-hidden fade-up delay-200 relative group">
+        <div class="relative w-full h-48 overflow-hidden">
+          <img src="/images/project3/Screenshot 2025-09-29 003903.png"
+               alt="Project 3 Thumbnail"
+               class="w-full h-48 object-cover">
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-[#F4FEFE]">E-Coommerce</h3>
+          <p class="text-[#B4C3CC] text-sm"> Platform belanja online yang dirancang untuk memberikan pengalaman pengguna terbaik. </p>
+          <button onclick="openModal('E-Coommerce', [
+                    '/images/project3/Screenshot 2025-09-29 003903.png',
+                    '/images/project3/Screenshot 2025-09-29 004018.png',
+                    '/images/project3/Screenshot 2025-09-29 004109.png',
+                    '/images/project3/Screenshot 2025-09-29 004328.png',
+                    '/images/project3/Screenshot 2025-09-29 004413.png',
+                    '/images/project3/Screenshot 2025-09-29 200107.png',
+                    '/images/project3/Screenshot 2025-09-29 200331.png',
+                    '/images/project3/Screenshot 2025-09-29 200422.png',
+                    '/images/project3/Screenshot 2025-09-29 200510.png',
+                    '/images/project3/Screenshot 2025-09-29 200538.png',
+                    '/images/project3/Screenshot 2025-09-29 200640.png',
+                    '/images/project3/Screenshot 2025-09-29 200708.png'
+                  ],  'Sistem ini menyediakan fitur lengkap untuk toko online, mulai dari katalog produk , '
+        + 'sale, tampilan home yang modern ,wishlist, keranjang belanja, hingga notifikasi status pesanan. '
+        + 'Admin dapat mengelola stok, promosi (flash sale), laporan penjualan, serta ekspor data melalui dashboard admin . '
+        + 'Dirancang dengan desain responsif, performa tinggi, dan kemudahan penggunaan bagi pelanggan maupun admin.')"
+                  class="mt-3 inline-block px-6 py-2 btn-glow text-sm bg-[#F4FEFE] text-[#1E3A46] rounded-full">
+            View Project
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== Popup Modal ===== -->
+<div id="project-modal" 
+     class="fixed inset-0 bg-black/70 hidden z-50 
+            flex items-center justify-center">
+
+  <div class="swiper-container-glass relative max-w-3xl w-full mx-4 p-6 
+              rounded-2xl shadow-2xl 
+              bg-white/10 border border-white/20 
+              backdrop-blur-xl">
+    <!-- Tombol Close -->
+    <button onclick="closeModal()" 
+            class="absolute top-3 right-3 text-[#F4FEFE] text-3xl">&times;</button>
+
+    <!-- Judul -->
+    <h3 id="modal-title" 
+        class="text-2xl font-bold gradient-text mb-6 text-center">
+        Project Title
+    </h3>
+
+    <!-- Swiper -->
+    <div class="swiper mySwiper mb-6">
+      <div class="swiper-wrapper" id="modal-images"></div>
+      <div class="swiper-button-next text-white"></div>
+      <div class="swiper-button-prev text-white"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Deskripsi -->
+    <p id="modal-desc" 
+       class="text-[#B4C3CC] text-sm leading-relaxed text-center"></p>
+  </div>
+</div>
+
+
+
+
+
+  <!-- ===== About Section ===== -->
+  <section id="about" class="py-20 px-6 smooth-section1">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-4xl font-bold gradient-text fade-up mb-10">About Me</h2>
+      <p class="text-lg text-[#B4C3CC] leading-relaxed fade-up max-w-2xl mx-auto">
+        I'm Husni Syamsi, I specialize in telecommunications networks, IoT systems, AI, network architecture, and web programming. I develop innovative and scalable solutions that improve connectivity and drive digital transformation. In other areas of modern technology, I apply my expertise to make work easier.
+      </p>
+    </div>
+  </section>
+
+<!-- ===== Contact Section ===== -->
+<section id="contact" class="py-20 px-6 smooth-section2">
+  <div class="max-w-7xl mx-auto fade-up">
+    <h2 class="text-4xl font-bold gradient-text text-center mb-6">Contact Me</h2>
+    <p class="text-center text-[#B4C3CC] mb-12 max-w-2xl mx-auto">
+      I’m open to discussing new projects, creative ideas, or opportunities. Reach out via the form or connect with me through social media.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <!-- Form Kontak -->
+       <!-- Form Kontak -->
+      <form action="{{ route('send.message') }}" method="POST" class="space-y-6 bg-[rgba(255,255,255,0.08)] p-8 rounded-2xl backdrop-blur-lg border border-[rgba(255,255,255,0.1)] shadow-lg hover:shadow-2xl transition-shadow duration-500">
+        @csrf
+        <input type="text" name="name" placeholder="Your Name" value="{{ old('name') }}" class="w-full p-4 rounded-lg bg-[#182B31]/50 border border-[#B4C3CC]/30 text-[#F4FEFE] focus:outline-none" required>
+        <input type="email" name="email" placeholder="Your Email" value="{{ old('email') }}" class="w-full p-4 rounded-lg bg-[#182B31]/50 border border-[#B4C3CC]/30 text-[#F4FEFE] focus:outline-none" required>
+        <textarea name="message" placeholder="Your Message" class="w-full p-4 rounded-lg bg-[#182B31]/50 border border-[#B4C3CC]/30 text-[#F4FEFE] focus:outline-none h-40" required>{{ old('message') }}</textarea>
+        <button type="submit" class="w-full px-6 py-3 rounded-full font-medium btn-glow bg-[#F4FEFE] text-[#1E3A46] hover:scale-105 transition-transform">
+          Send Message
+        </button>
+      </form>
+
+      <!-- Info & Social Media -->
+      <div class="flex flex-col justify-start gap-2">
+        <!-- Info Cards -->
+        <div class="grid grid-cols-1 gap-4">
+          <div class="card p-6 flex items-center gap-4 hover:scale-105 transition-transform hover:shadow-lg">
+            <i class="fas fa-map-marker-alt text-2xl text-[#F4FEFE]"></i>
+            <div>
+              <p class="text-[#B4C3CC] text-sm">Location</p>
+              <p class="text-[#F4FEFE] font-semibold">Surabaya, Indonesia</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Media -->
+        <div class="flex gap-6 mt-4 justify-center md:justify-start">
+          <a href="https://instagram.com/husniisy" target="_blank" class="text-[#F4FEFE] hover:text-[#B4C3CC] transition-colors text-3xl hover:scale-110 transform">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://wa.me/082331332723" target="_blank" class="text-[#F4FEFE] hover:text-[#B4C3CC] transition-colors text-3xl hover:scale-110 transform">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="https://github.com/username" target="_blank" class="text-[#F4FEFE] hover:text-[#B4C3CC] transition-colors text-3xl hover:scale-110 transform">
+            <i class="fab fa-github"></i>
+          </a>
+         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=husnisy2005@gmail.com" target="_blank"
+          class="inline-block text-[#F4FEFE] hover:text-[#B4C3CC] transition-transform duration-200 text-3xl hover:scale-110">
+          <i class="fas fa-envelope"></i>
+        </a>
+
+        </div>
+
+        <!-- Call-to-action tambahan -->
+        <a href="#projects" class="mt-6 inline-block px-8 py-3 rounded-full font-medium btn-glow bg-[#F4FEFE] text-[#1E3A46] text-center hover:scale-105 transition-transform">
+          Let’s Collaborate!
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+  <!-- ===== Footer ===== -->
+  <footer class="bg-[rgba(24,43,49,0.9)] text-[#F4FEFE] text-center py-6 border-t border-[rgba(24,43,49,0.9)]">
+    <p class="text-sm">&copy; 2025 Husni Syamsi. All rights reserved.</p>
+  </footer>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
+  <!-- ===== Script Navbar Hide/Show ===== -->
+  <script>
+    let lastScroll = 0;
+    const navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > lastScroll) {
+        navbar.style.top = "-80px"; 
+      } else {
+        navbar.style.top = "0"; 
+      }
+      lastScroll = currentScroll;
+    });
+
+  
+ document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.card').forEach(card => {
+      const slides = card.querySelector('.slides');
+      if (!slides) return;
+      const imgs = slides.querySelectorAll('img');
+      const n = imgs.length;
+      let currentIndex = 0;
+      let intervalId = null;
+
+      // if only 1 image -> do nothing
+      if (n <= 1) return;
+
+      // move to given index (calculates correct percent)
+     const goTo = (index) => {
+        slides.style.transform = `translateX(-${index * 100}%)`;
+      };
+
+      // autoplay with 4s interval
+      const start = () => {
+        if (intervalId) clearInterval(intervalId);
+        intervalId = setInterval(() => {
+          currentIndex = (currentIndex + 1) % n;
+          goTo(currentIndex);
+        },4000);
+      };
+
+      const stop = () => {
+        if (intervalId) {
+          clearInterval(intervalId);
+          intervalId = null;
+        }
+      };
+
+      // start autoplay
+      start();
+
+      // pause on hover, resume on leave
+      card.addEventListener('mouseenter', stop);
+      card.addEventListener('mouseleave', start);
+
+      // ensure initial position
+      goTo(0);
+    });
+  });
+
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      document.getElementById("splash-screen").classList.add("splash-fade");
+      setTimeout(() => {
+        document.getElementById("splash-screen").remove();
+          document.getElementById("home").scrollIntoView({ behavior: "smooth" });
+      }, 1000); // tunggu transisi fade selesai
+    }, 2500);
+  });
+
+   let swiper;
+
+  function openModal(title, images, desc) {
+    // Set title & desc
+    document.getElementById("modal-title").innerText = title;
+    document.getElementById("modal-desc").innerText = desc;
+
+    // Isi gambar ke swiper
+    let imgContainer = document.getElementById("modal-images");
+    imgContainer.innerHTML = "";
+    images.forEach(src => {
+      let slide = document.createElement("div");
+      slide.className = "swiper-slide";
+      slide.innerHTML = `<img src="${src}" class="w-full rounded-lg shadow-lg">`;
+      imgContainer.appendChild(slide);
+    });
+
+    // Tampilkan modal
+    let modal = document.getElementById("project-modal");
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+
+    // Init/Update Swiper
+    if (swiper) {
+      swiper.update();
+    } else {
+      swiper = new Swiper(".mySwiper", {
+        loop: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    }
+  }
+
+  function closeModal() {
+    let modal = document.getElementById("project-modal");
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+  }
+   let swiperInstance;
+
+  function openModal(title, images, desc) {
+    document.getElementById('project-modal').classList.remove('hidden');
+    document.getElementById('modal-title').textContent = title;
+    document.getElementById('modal-desc').textContent = desc;
+
+    // Isi ulang gambar
+    const imagesContainer = document.getElementById('modal-images');
+    imagesContainer.innerHTML = "";
+    images.forEach(src => {
+      imagesContainer.innerHTML += `
+        <div class="swiper-slide">
+          <img src="${src}" class="w-full h-[400px] object-contain rounded-lg" />
+        </div>`;
+    });
+
+    // Jika sudah ada swiper, destroy dulu
+    if (swiperInstance) {
+      swiperInstance.destroy(true, true);
+    }
+
+    // Buat ulang swiper
+    swiperInstance = new Swiper(".mySwiper", {
+      loop: true,
+      autoplay: {
+        delay: 3000, // scroll otomatis 2.5 detik
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  }
+
+  function closeModal() {
+    document.getElementById('project-modal').classList.add('hidden');
+    if (swiperInstance) {
+      swiperInstance.autoplay.stop();
+    }
+  }
+
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+</body>
+</html>
