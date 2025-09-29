@@ -570,8 +570,10 @@
           <i class="fas fa-envelope"></i>
         </a>
         </div>
-        <a href="#projects" class="mt-6 inline-block px-8 py-3 rounded-full font-medium btn-glow bg-[#F4FEFE] text-[#1E3A46] text-center hover:scale-105 transition-transform">
-          Let’s Collaborate!
+       <a href="#"
+            onclick="sendWhatsapp()"
+            class="mt-6 inline-block px-8 py-3 rounded-full font-medium btn-glow bg-[#F4FEFE] text-[#1E3A46] text-center hover:scale-105 transition-transform">
+            Let’s Collaborate
         </a>
       </div>
     </div>
@@ -781,6 +783,12 @@ function showPopup(success, message) {
     if (swiperInstance) {
       swiperInstance.autoplay.stop();
     }
+  }
+ function sendWhatsapp() {
+    let phone = "6282331332723"; 
+    let message = "Halo Husni, saya tertarik untuk kolaborasi dengan Anda.";
+    let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+    window.open(url, "_blank");
   }
 
   </script>
