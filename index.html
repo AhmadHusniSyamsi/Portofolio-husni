@@ -525,7 +525,7 @@
                     <div class="absolute -inset-3 rounded-full bg-gradient-to-tr from-[#F4FEFE] via-[#B4C3CC] to-[#58717D] opacity-60 blur-2xl group-hover:opacity-90 group-hover:blur-3xl transition-all duration-700"></div>
                     <div class="absolute -inset-1 rounded-full bg-gradient-to-tr from-[#B4C3CC]/40 via-[#F4FEFE]/30 to-[#58717D]/40 opacity-50 blur-md"></div>
                     <div class="relative w-full h-auto aspect-square rounded-full overflow-hidden border-4 border-[#F4FEFE]/30 shadow-[0_20px_40px_rgba(0,0,0,0.4),0_0_80px_rgba(244,254,254,0.3)] group-hover:scale-105 group-hover:shadow-[0_25px_50px_rgba(0,0,0,0.6),0_0_100px_rgba(244,254,254,0.4)] transition-all duration-700 float">
-                        <img src="/images/profile/WhatsApp Image 2025-09-28 at 14.52.23_1e9d46dc.jpg" alt="Profile Picture" class="w-full h-full object-cover">
+                        <img src="images/profile/WhatsApp Image 2025-09-28 at 14.52.23_1e9d46dc.jpg" alt="Profile Picture" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
@@ -628,27 +628,21 @@
         textElement.classList.add('typewriter-cursor');
 
         if (!isDeleting && charIndex < currentWord.length) {
-            // Mengetik
             charIndex++;
             setTimeout(type, 100); 
         } else if (isDeleting && charIndex > 0) {
-            // Menghapus
             charIndex--;
             setTimeout(type, 50); 
         } else if (!isDeleting && charIndex === currentWord.length) {
-            // Selesai mengetik, mulai menghapus setelah 1.5 detik
             isDeleting = true;
-            textElement.classList.remove('typewriter-cursor'); // Sembunyikan kursor saat jeda
+            textElement.classList.remove('typewriter-cursor'); 
             setTimeout(type, 1500); 
         } else if (isDeleting && charIndex === 0) {
-            // Selesai menghapus, pindah ke kata berikutnya
             isDeleting = false;
             wordIndex = (wordIndex + 1) % words.length;
             setTimeout(type, 300); 
         }
     }
-
-    // Mulai efek setelah semua animasi fade-in selesai (sekitar 1 detik)
     setTimeout(type, 1000); 
 });
   (function() {
@@ -732,15 +726,12 @@ function showPopup(success, message) {
       let currentIndex = 0;
       let intervalId = null;
 
-      // if only 1 image -> do nothing
       if (n <= 1) return;
 
-      // move to given index (calculates correct percent)
+
      const goTo = (index) => {
         slides.style.transform = `translateX(-${index * 100}%)`;
       };
-
-      // autoplay with 4s interval
       const start = () => {
         if (intervalId) clearInterval(intervalId);
         intervalId = setInterval(() => {
@@ -755,15 +746,11 @@ function showPopup(success, message) {
           intervalId = null;
         }
       };
-
-      // start autoplay
       start();
 
-      // pause on hover, resume on leave
       card.addEventListener('mouseenter', stop);
       card.addEventListener('mouseleave', start);
 
-      // ensure initial position
       goTo(0);
     });
   });
@@ -774,18 +761,15 @@ function showPopup(success, message) {
       setTimeout(() => {
         document.getElementById("splash-screen").remove();
           document.getElementById("home").scrollIntoView({ behavior: "smooth" });
-      }, 1000); // tunggu transisi fade selesai
+      }, 1000);
     }, 2500);
   });
 
    let swiper;
 
   function openModal(title, images, desc) {
-    // Set title & desc
     document.getElementById("modal-title").innerText = title;
     document.getElementById("modal-desc").innerText = desc;
-
-    // Isi gambar ke swiper
     let imgContainer = document.getElementById("modal-images");
     imgContainer.innerHTML = "";
     images.forEach(src => {
@@ -795,12 +779,10 @@ function showPopup(success, message) {
       imgContainer.appendChild(slide);
     });
 
-    // Tampilkan modal
     let modal = document.getElementById("project-modal");
     modal.classList.remove("hidden");
     modal.classList.add("flex");
 
-    // Init/Update Swiper
     if (swiper) {
       swiper.update();
     } else {
@@ -830,7 +812,6 @@ function showPopup(success, message) {
     document.getElementById('modal-title').textContent = title;
     document.getElementById('modal-desc').textContent = desc;
 
-    // Isi ulang gambar
     const imagesContainer = document.getElementById('modal-images');
     imagesContainer.innerHTML = "";
     images.forEach(src => {
@@ -840,16 +821,14 @@ function showPopup(success, message) {
         </div>`;
     });
 
-    // Jika sudah ada swiper, destroy dulu
     if (swiperInstance) {
       swiperInstance.destroy(true, true);
     }
 
-    // Buat ulang swiper
     swiperInstance = new Swiper(".mySwiper", {
       loop: true,
       autoplay: {
-        delay: 3000, // scroll otomatis 2.5 detik
+        delay: 3000,
         disableOnInteraction: false,
       },
       pagination: {
