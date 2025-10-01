@@ -11,31 +11,326 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-dymN6z8V++6Yg+UMz/PLawV9lVfQ1z1zjCgkS0w6u8Q1kg7jVObJRa+j0gKxhzPn7aQXWmJb9b0W5Fad2p7v0A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+</head>
+<body class="scroll-smooth">
+  <div id="splash-screen" class="fixed inset-0 flex items-center justify-center bg-[#182B31] z-50">
+  <h1 class="splash-h">H</h1>
+</div>
+  <header id="navbar" class="fixed w-full z-40 top-0 transition-all duration-500">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-center h-20">
+      <nav class="glass-navbar rounded-full px-8 py-3 shadow-lg">
+        <div class="flex items-center gap-6">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+  <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-28 md:pt-0">
+    <div class="max-w-4xl mx-auto">
+        
+        <h1 class="text-6xl sm:text-7xl lg:text-8xl font-extrabold mb-6 gradient-text animate-fade-in-up" style="animation-delay: 0.2s;">
+            Hi, I'm Husni Syamsi
+        </h1>
 
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-8 text-[#B4C3CC] animate-fade-in-up" style="animation-delay: 0.4s;">
+            Building Solutions in <span id="typewriter-text" class="text-[#F4FEFE] font-bold relative inline-block"></span>
+        </h2>
 
+        <p class="text-xl md:text-2xl text-[#F4FEFE]/80 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style="animation-delay: 0.6s;">
+            Solving complex challenges with innovative, scalable technology tailored for the future.
+        </p>
 
+        <div class="mt-12 flex justify-center gap-6 animate-fade-in-up" style="animation-delay: 0.8s;">
+            <a href="#projects" class="px-8 py-3 rounded-full text-lg font-medium btn-glow bg-[#F4FEFE] text-[#1E3A46] whitespace-nowrap flex-shrink-0">
+                Explore My Work
+            </a>
+            <a href="#contact" class="px-8 py-3 rounded-full text-lg font-medium btn-glow border border-[#F4FEFE] text-[#F4FEFE] whitespace-nowrap flex-shrink-0">
+                Contact Me
+            </a>
+        </div>
+        
+    </div>
+</section>
+<section id="skills" class="py-20 px-6">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-14 gradient-text fade-up">My Skills</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card p-6 fade-up">
+          <h3 class="text-xl font-semibold text-[#F4FEFE] mb-3">Internet Of Things Expert</h3>
+          <p class="text-[#B4C3CC]">Developing IoT solutions that combine innovation and functionality.</p>
+        </div>
+        <div class="card p-6 fade-up delay-100">
+          <h3 class="text-xl font-semibold text-[#F4FEFE] mb-3">Web Development</h3>
+          <p class="text-[#B4C3CC]">Optimized websites, simple and reliable..</p>
+        </div>
+        <div class="card p-6 fade-up delay-200">
+          <h3 class="text-xl font-semibold text-[#F4FEFE] mb-3">Artificial Intelligence Development</h3>
+          <p class="text-[#B4C3CC]">Designing intelligent systems that learn, adapt, and optimize solutions.</p>
+        </div>
+      </div>
+    </div>
+     <div class="mt-16 fade-up">
+    <div class="overflow-hidden">
+        <div class="flex logo-track flex-nowrap items-center w-full"> 
+            
+            <div class="flex justify-around items-center gap-12 md:gap-20 flex-shrink-0 px-10">
+                <div class="skill-icon group"><i class="fab fa-html5 text-6xl text-orange-500"></i></div>
+                <div class="skill-icon group"><i class="fab fa-css3-alt text-6xl text-blue-500"></i></div>
+                <div class="skill-icon group"><i class="fab fa-js text-6xl text-yellow-400"></i></div>
+                <div class="skill-icon group"><i class="fab fa-python text-6xl text-blue-400"></i></div>
+                <div class="skill-icon group"><i class="fab fa-laravel text-6xl text-red-500"></i></div>
+                <div class="skill-icon group"><i class="fab fa-github text-6xl text-gray-300"></i></div>
+                <div class="skill-icon group"><i class="fas fa-robot text-6xl text-green-400"></i></div>
+                <div class="skill-icon group"><i class="fas fa-wifi text-6xl text-teal-400"></i></div>
+                <div class="skill-icon group"><i class="fas fa-microchip text-6xl text-purple-400"></i></div>
+                <div class="skill-icon group"><i class="fas fa-cloud text-6xl text-sky-400"></i></div>
+            </div>
 
+            <div class="flex justify-around items-center gap-12 md:gap-20 flex-shrink-0 px-10">
+                <div class="skill-icon group"><i class="fab fa-html5 text-6xl text-orange-500"></i></div>
+                <div class="skill-icon group"><i class="fab fa-css3-alt text-6xl text-blue-500"></i></div>
+                <div class="skill-icon group"><i class="fab fa-js text-6xl text-yellow-400"></i></div>
+                <div class="skill-icon group"><i class="fab fa-python text-6xl text-blue-400"></i></div>
+                <div class="skill-icon group"><i class="fab fa-laravel text-6xl text-red-500"></i></div>
+                <div class="skill-icon group"><i class="fab fa-github text-6xl text-gray-300"></i></div>
+                <div class="skill-icon group"><i class="fas fa-robot text-6xl text-green-400"></i></div>
+                <div class="skill-icon group"><i class="fas fa-wifi text-6xl text-teal-400"></i></div>
+                <div class="skill-icon group"><i class="fas fa-microchip text-6xl text-purple-400"></i></div>
+                <div class="skill-icon group"><i class="fas fa-cloud text-6xl text-sky-400"></i></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</section>
+<section id="projects" class="py-20 px-6 smooth-section">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-14 gradient-text fade-up">Featured Projects</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="card overflow-hidden fade-up relative group">
+        <div class="relative w-full h-48 overflow-hidden">
+          <img src="images/profile/Screenshot 2025-09-27 132113.png"
+               alt="Project 1 Thumbnail"
+               class="w-full h-48 object-cover">
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-[#F4FEFE]">Automatic Crossing</h3>
+          <p class="text-[#B4C3CC] text-sm"> Sistem penyeberangan jalan otomatis berbasis kamera dan AI untuk mendeteksi pejalan kaki </p>
+          <button onclick="openModal('Automatic Crossing', [
+                    'images/profile/Screenshot 2025-09-27 132113.png',
+                    'images/profile/Screenshot 2025-09-27 132157.png',
+                    'images/project1/Screenshot 2025-09-29 190511.png',
+                    'images/project1/Screenshot 2025-09-29 190353.png',
+                    'images/project1/Screenshot 2025-09-29 190443.png'
+                  ],  'Sistem ini menggunakan computer vision (YOLOV8) untuk mendeteksi pejalan kaki secara otomatis berdasarkan klasifikasi dan menentukan durasi lampu merah . '
+                  +'Sistem ini juga menggunakan sensor ultrasonic untuk mendeteksi jarak pengguna jalan apakah ingin menyeberang atau tidak dan juga sensor pir untuk mendeteksi gerakan'
+      + 'Fitur meliputi deteksi dewasa, anak-anak, dan pengguna kursi roda, toggle kamera real-time, '
+      + 'pencatatan log, hingga dashboard statistik harian & bulanan. '
+      + 'Dirancang untuk mendukung keselamatan penyeberangan bagi pengguna jalan dengan teknologi modern.')"
+                  class="mt-3 inline-block px-6 py-2 btn-glow text-sm bg-[#F4FEFE] text-[#1E3A46] rounded-full">
+            View Project
+          </button>
+        </div>
+      </div>
+      <div class="card overflow-hidden fade-up delay-100 relative group">
+        <div class="relative w-full h-48 overflow-hidden">
+          <img src="images/profile/Screenshot 2025-09-27 131811.png"
+               alt="Project 2 Thumbnail"
+               class="w-full h-48 object-cover">
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-[#F4FEFE]">Aviation monitoring </h3>
+          <p class="text-[#B4C3CC] text-sm"> Sistem monitoring avionik dan uji performa navigasi penerbangan (DVOR, DME, ILS, Radar). </p>
+          <button onclick="openModal('Aviation monitoring and Perfomance Check', [
+                    'images/profile/Screenshot 2025-09-27 131811.png',
+                    'images/profile/Screenshot 2025-09-27 131606.png',
+                    'images/project2/Screenshot 2025-09-29 194958.png',
+                    'images/project2/Screenshot 2025-09-29 195126.png',
+                    'images/project2/Screenshot 2025-09-29 195043.png',
+                    'images/project2/Screenshot 2025-09-29 195451.png',
+                    'images/project2/Screenshot 2025-09-29 195230.png'
+                  ], 'Platform ini dirancang untuk memonitor dan mengevaluasi sistem navigasi penerbangan '
+        + '(DVOR, DME, ILS, Radar). Data ground check dapat direkam, divisualisasikan dalam grafik performa, '
+        + 'dan diekspor ke laporan PDF/CSV. Sistem mendukung inspeksi berkala, analisis performa, serta '
+        + 'peningkatan keselamatan penerbangan.')"
+                  class="mt-3 inline-block px-6 py-2 btn-glow text-sm bg-[#F4FEFE] text-[#1E3A46] rounded-full">
+            View Project
+          </button>
+        </div>
+      </div>
+      <div class="card overflow-hidden fade-up delay-200 relative group">
+        <div class="relative w-full h-48 overflow-hidden">
+          <img src="images/project3/Screenshot 2025-09-29 003903.png"
+               alt="Project 3 Thumbnail"
+               class="w-full h-48 object-cover">
+        </div>
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-[#F4FEFE]">E-Commerce</h3>
+          <p class="text-[#B4C3CC] text-sm"> Platform belanja online yang dirancang untuk memberikan pengalaman pengguna terbaik. </p>
+          <button onclick="openModal('E-Coommerce', [
+                    'images/project3/Screenshot 2025-09-29 003903.png',
+                    'images/project3/Screenshot 2025-09-29 004018.png',
+                    'images/project3/Screenshot 2025-09-29 004109.png',
+                    'images/project3/Screenshot 2025-09-29 004328.png',
+                    'images/project3/Screenshot 2025-09-29 004413.png',
+                    'images/project3/Screenshot 2025-09-29 200107.png',
+                    'images/project3/Screenshot 2025-09-29 200331.png',
+                    'images/project3/Screenshot 2025-09-29 200422.png',
+                    'images/project3/Screenshot 2025-09-29 200510.png',
+                    'images/project3/Screenshot 2025-09-29 200538.png',
+                    'images/project3/Screenshot 2025-09-29 200640.png',
+                    'images/project3/Screenshot 2025-09-29 200708.png'
+                  ],  'Sistem ini menyediakan fitur lengkap untuk toko online, mulai dari katalog produk , '
+        + 'sale, tampilan home yang modern ,wishlist, keranjang belanja, hingga notifikasi status pesanan. '
+        + 'Admin dapat mengelola stok, promosi (flash sale), laporan penjualan, serta ekspor data melalui dashboard admin . '
+        + 'Dirancang dengan desain responsif, performa tinggi, dan kemudahan penggunaan bagi pelanggan maupun admin.')"
+                  class="mt-3 inline-block px-6 py-2 btn-glow text-sm bg-[#F4FEFE] text-[#1E3A46] rounded-full">
+            View Project
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div id="project-modal" 
+     class="fixed inset-0 bg-black/70 hidden z-50 
+            flex items-center justify-center">
+  <div class="swiper-container-glass relative max-w-3xl w-full mx-4 p-6 rounded-2xl shadow-2xl bg-white/10 border border-white/20    backdrop-blur-xl"> 
+    <button onclick="closeModal()" 
+            class="absolute top-3 right-3 text-[#F4FEFE] text-3xl">&times;</button>
+    <h3 id="modal-title" class="text-2xl font-bold gradient-text mb-6 text-center">Project Title</h3>
+    <div class="swiper mySwiper mb-6">
+      <div class="swiper-wrapper" id="modal-images"></div>
+      <div class="swiper-button-next text-white"></div>
+      <div class="swiper-button-prev text-white"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <p id="modal-desc" 
+       class="text-[#B4C3CC] text-sm leading-relaxed text-center"></p>
+  </div>
+</div>
+ <section id="about" class="py-20 px-6 smooth-section1">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl font-bold gradient-text text-center mb-16">About Me</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+            <div class="w-full max-w-sm mx-auto">
+                <div class="relative group">
+                    <div class="absolute -inset-3 rounded-full bg-gradient-to-tr from-[#F4FEFE] via-[#B4C3CC] to-[#58717D] opacity-60 blur-2xl group-hover:opacity-90 group-hover:blur-3xl transition-all duration-700"></div>
+                    <div class="absolute -inset-1 rounded-full bg-gradient-to-tr from-[#B4C3CC]/40 via-[#F4FEFE]/30 to-[#58717D]/40 opacity-50 blur-md"></div>
+                    <div class="relative w-full h-auto aspect-square rounded-full overflow-hidden border-4 border-[#F4FEFE]/30 shadow-[0_20px_40px_rgba(0,0,0,0.4),0_0_80px_rgba(244,254,254,0.3)] group-hover:scale-105 group-hover:shadow-[0_25px_50px_rgba(0,0,0,0.6),0_0_100px_rgba(244,254,254,0.4)] transition-all duration-700 float">
+                        <img src="/images/profile/WhatsApp Image 2025-09-28 at 14.52.23_1e9d46dc.jpg" alt="Profile Picture" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+            <div class="text-center md:text-left">
+                <p class="text-lg text-[#B4C3CC] leading-relaxed">
+                    I'm Husni Syamsi, I specialize in telecommunications networks, IoT systems, AI, network architecture, and web programming. I develop innovative and scalable solutions that improve connectivity and drive digital transformation. In other areas of modern technology, I apply my expertise to make work easier.
+                </p>
+            </div>
+        </div>
+    </div>
+  </section>
+<section id="contact" class="py-20 px-6 smooth-section2">
+  <div class="max-w-7xl mx-auto fade-up">
+    <h2 class="text-4xl font-bold gradient-text text-center mb-6">Contact Me</h2>
+    <p class="text-center text-[#B4C3CC] mb-12 max-w-2xl mx-auto">
+      I’m open to discussing new projects, creative ideas, or opportunities. Reach out via the form or connect with me through social media.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+     <form id="contact-form" onsubmit="sendEmail(event)" 
+      class="space-y-6 bg-[rgba(255,255,255,0.08)] p-8 rounded-2xl backdrop-blur-lg border border-[rgba(255,255,255,0.1)] shadow-lg hover:shadow-2xl transition-shadow duration-500">
+  
+  <input type="text" name="user_name" placeholder="Your Name"  
+         class="w-full p-4 rounded-lg bg-[#182B31]/50 border border-[#B4C3CC]/30 text-[#F4FEFE] focus:outline-none" required>
+
+  <input type="email" name="user_email" placeholder="Your Email"  
+         class="w-full p-4 rounded-lg bg-[#182B31]/50 border border-[#B4C3CC]/30 text-[#F4FEFE] focus:outline-none" required>
+
+  <textarea name="message" placeholder="Your Message" 
+            class="w-full p-4 rounded-lg bg-[#182B31]/50 border border-[#B4C3CC]/30 text-[#F4FEFE] focus:outline-none h-40" required></textarea>
+
+  <button type="submit" id="send-btn"
+          class="w-full px-6 py-3 rounded-full font-medium btn-glow bg-[#F4FEFE] text-[#1E3A46] hover:scale-105 transition-transform flex items-center justify-center space-x-2">
+    <svg class="spinner animate-spin h-5 w-5 text-[#1E3A46] hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+    </svg>
+    <span class="btn-text">Send Message</span>
+  </button>
+</form>
+<div id="popup" class="fixed inset-0 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-50">
+  <div class="bg-[#1E3A46]/90 backdrop-blur-xl rounded-3xl px-10 py-8 flex items-center gap-6 shadow-2xl transform scale-75 transition-transform duration-300">
+    <div id="popup-icon" class="text-6xl font-extrabold"></div>
+    <div id="popup-text" class="text-white text-xl font-semibold max-w-xs"></div>
+  </div>
+</div>
+
+      <div class="flex flex-col justify-start gap-2">
+        <div class="grid grid-cols-1 gap-4">
+          <div class="card p-6 flex items-center gap-4 hover:scale-105 transition-transform hover:shadow-lg">
+            <i class="fas fa-map-marker-alt text-2xl text-[#F4FEFE]"></i>
+            <div>
+              <p class="text-[#B4C3CC] text-sm">Location</p>
+              <p class="text-[#F4FEFE] font-semibold">Surabaya, Indonesia</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex gap-6 mt-4 justify-center md:justify-start">
+          <a href="https://instagram.com/husniisy" target="_blank" class="text-[#F4FEFE] hover:text-[#B4C3CC] transition-colors text-3xl hover:scale-110 transform">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://wa.me/082331332723" target="_blank" class="text-[#F4FEFE] hover:text-[#B4C3CC] transition-colors text-3xl hover:scale-110 transform">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="https://github.com/username" target="_blank" class="text-[#F4FEFE] hover:text-[#B4C3CC] transition-colors text-3xl hover:scale-110 transform">
+            <i class="fab fa-github"></i>
+          </a>
+         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=husnisy2005@gmail.com" target="_blank"
+          class="inline-block text-[#F4FEFE] hover:text-[#B4C3CC] transition-transform duration-200 text-3xl hover:scale-110">
+          <i class="fas fa-envelope"></i>
+        </a>
+        </div>
+       <a href="#"
+            onclick="sendWhatsapp()"
+            class="mt-6 inline-block px-8 py-3 rounded-full font-medium btn-glow bg-[#F4FEFE] text-[#1E3A46] text-center hover:scale-105 transition-transform">
+            Let’s Collaborate
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+  <footer class="bg-[rgba(24,43,49,0.9)] text-[#F4FEFE] text-center py-6 border-t border-[rgba(24,43,49,0.9)]">
+    <p class="text-sm">&copy; 2025 Husni Syamsi. All rights reserved.</p>
+  </footer>
   <style>
   body {
-      font-family: 'Poppins', 'Inter', sans-serif;
-      background: linear-gradient(-45deg, #182B31, #1E3A46, #58717D, #B4C3CC, #F4FEFE);
-      background-size: 400% 400%;
-      animation: gradientFlow 18s ease infinite;
-      color: #F4FEFE;
-      overflow-x: hidden;
+    font-family: 'Poppins', 'Inter', sans-serif;
+    background: linear-gradient(-45deg, #182B31, #1E3A46, #58717D, #B4C3CC, #F4FEFE);
+    background-size: 400% 400%;
+    animation: gradientFlow 18s ease infinite;
+    color: #F4FEFE;
+    overflow-x: hidden;
     }
   h1, h2, h3, .gradient-text {
   font-family: 'Inter', 'Poppins', sans-serif;
   font-weight: 700;
   letter-spacing: 0.5px;}
- /* Warna tombol navigasi */
+
 .swiper-button-next,
 .swiper-button-prev {
-  color: #F4FEFE !important; /* putih */
+  color: #F4FEFE !important; 
   text-shadow: 0 0 12px rgba(244, 254, 254, 0.7);
 }
 
-/* Warna pagination bullet */
+
 .swiper-pagination-bullet {
   background: rgba(244, 254, 254, 0.5) !important;
   opacity: 0.6;
@@ -47,11 +342,11 @@
   transform: scale(1.3);
 }
 
-    @keyframes gradientFlow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+@keyframes gradientFlow {
+   0% { background-position: 0% 50%; }
+   50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+ }
 
     .glass-navbar {
       background: rgba(255, 255, 255, 0.15);
@@ -284,308 +579,72 @@
       text-align: center;
     }
   }
+.logo-track {
+    width: 200%; 
+    animation: logo-scroll-right 60s linear infinite; 
+}
+.logo-track:hover {
+    animation-play-state: paused;
+}
+@media (max-width: 767px) {
+    .logo-track {
+        animation: logo-scroll-right 5s linear infinite; 
+    }
+}
+.typewriter-cursor::after {
+    content: "|";
+    display: inline-block;
+    animation: blink 0.7s infinite;
+    color: #F4FEFE;
+    margin-left: 5px;
+}
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+#typewriter-text {
+    min-height: 1.2em; 
+}
+
 
   </style>
-</head>
-<body class="scroll-smooth">
-  <div id="splash-screen" class="fixed inset-0 flex items-center justify-center bg-[#182B31] z-50">
-  <h1 class="splash-h">H</h1>
-</div>
-  <header id="navbar" class="fixed w-full z-30 glass-navbar top-0">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-      <h1 class="text-2xl font-bold gradient-text">Husni</h1>
-      <nav class="space-x-8 hidden md:flex font-medium text-[#F4FEFE]">
-        <a href="#home" class="nav-link">Home</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#skills" class="nav-link">My Skills</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#contact" class="nav-link">Contact</a>
-      </nav>
-    </div>
-  </header>
-  <section id="home" class="min-h-screen flex flex-col md:flex-row justify-center items-center text-center px-6 pt-28 md:pt-0.">
-    <div class="md:w-1/2 fade-up">
-      <h1 class="text-5xl md:text-6xl font-bold mb-6 gradient-text">
-        Hi, I'm Husni Syamsi
-      </h1>
-      <p class="text-lg md:text-xl text-[#F4FEFE] max-w-xl mx-auto">
-    "Specializing in creating innovative, scalable technology solutions to solve complex challenges."
-      </p>
-      <div class="mt-8 flex justify-center gap-6">
-        <a href="#projects" class="px-8 py-3 rounded-full text-lg font-medium btn-glow bg-[#F4FEFE] text-[#1E3A46]">
-          Explore My Work
-        </a>
-        <a href="#contact" class="px-8 py-3 rounded-full text-lg font-medium btn-glow border border-[#F4FEFE] text-[#F4FEFE]">
-          Contact Me
-        </a>
-      </div>
-    </div>
-   <div class="md:w-1/2 mt-10 md:mt-0 fade-up delay-200">
-  <div class="relative group mx-auto w-[400px] h-[400px]">
-    <div class="absolute -inset-3 rounded-full
-                bg-gradient-to-tr from-[#F4FEFE] via-[#B4C3CC] to-[#58717D] 
-                opacity-60 blur-2xl group-hover:opacity-90 group-hover:blur-3xl 
-                transition-all duration-700"></div>
-    <div class="absolute -inset-1 rounded-full 
-                bg-gradient-to-tr from-[#B4C3CC]/40 via-[#F4FEFE]/30 to-[#58717D]/40 
-                opacity-50 blur-md"></div>
-    <div class="relative w-full h-full rounded-full overflow-hidden 
-                border-4 border-[#F4FEFE]/30
-                shadow-[0_20px_40px_rgba(0,0,0,0.4),0_0_80px_rgba(244,254,254,0.3)]
-                group-hover:scale-105 group-hover:shadow-[0_25px_50px_rgba(0,0,0,0.6),0_0_100px_rgba(244,254,254,0.4)]
-                transition-all duration-700 float">
-      <img src="images/profile/WhatsApp Image 2025-09-28 at 14.52.23_1e9d46dc.jpg" 
-           alt="Profile Picture" 
-           class="w-full h-full object-cover">
-    </div>
-  </div>
-</div>
-  </section>
-  <section id="skills" class="py-20 px-6">
-    <div class="max-w-7xl mx-auto text-center">
-      <h2 class="text-4xl font-bold mb-14 gradient-text fade-up">My Skills</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="card p-6 fade-up">
-          <h3 class="text-xl font-semibold text-[#F4FEFE] mb-3">Internet Of Things Expert</h3>
-          <p class="text-[#B4C3CC]">Developing IoT solutions that combine innovation and functionality.</p>
-        </div>
-        <div class="card p-6 fade-up delay-100">
-          <h3 class="text-xl font-semibold text-[#F4FEFE] mb-3">Web Development</h3>
-          <p class="text-[#B4C3CC]">Optimized websites, simple and reliable..</p>
-        </div>
-        <div class="card p-6 fade-up delay-200">
-          <h3 class="text-xl font-semibold text-[#F4FEFE] mb-3">Artificial Intelligence Development</h3>
-          <p class="text-[#B4C3CC]">Designing intelligent systems that learn, adapt, and optimize solutions.</p>
-        </div>
-      </div>
-    </div>
-      <div class="mt-16 fade-up">
-        <div class="flex flex-wrap justify-center gap-10">
-          <div class="skill-icon group">
-            <i class="fab fa-html5 text-6xl text-orange-500"></i>
-          </div>
-          <div class="skill-icon group">
-            <i class="fab fa-css3-alt text-6xl text-blue-500"></i>
-          </div>
-          <div class="skill-icon group">
-            <i class="fab fa-js text-6xl text-yellow-400"></i>
-          </div>
-          <div class="skill-icon group">
-            <i class="fab fa-python text-6xl text-blue-400"></i>
-          </div>
-          <div class="skill-icon group">
-            <i class="fab fa-laravel text-6xl text-red-500"></i>
-          </div>
-          <div class="skill-icon group">
-            <i class="fab fa-github text-6xl text-gray-300"></i>
-          </div>
-          <div class="skill-icon group">
-            <i class="fas fa-robot text-6xl text-green-400"></i>
-          </div>
-          <div class="skill-icon group">
-            <i class="fas fa-wifi text-6xl text-teal-400"></i>
-          </div>
-           <div class="skill-icon group">
-            <i class="fas fa-microchip text-6xl text-purple-400"></i>
-          </div>
-          <div class="skill-icon group">
-            <i class="fas fa-cloud text-6xl text-sky-400"></i>
-          </div>
-        </div>
-      </div>
-        </section>
-<section id="projects" class="py-20 px-6 smooth-section">
-  <div class="max-w-7xl mx-auto">
-    <h2 class="text-4xl font-bold text-center mb-14 gradient-text fade-up">Featured Projects</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="card overflow-hidden fade-up relative group">
-        <div class="relative w-full h-48 overflow-hidden">
-          <img src="images/profile/Screenshot 2025-09-27 132113.png"
-               alt="Project 1 Thumbnail"
-               class="w-full h-48 object-cover">
-        </div>
-        <div class="p-4">
-          <h3 class="text-lg font-semibold text-[#F4FEFE]">Automatic Crossing</h3>
-          <p class="text-[#B4C3CC] text-sm"> Sistem penyeberangan jalan otomatis berbasis kamera dan AI untuk mendeteksi pejalan kaki </p>
-          <button onclick="openModal('Automatic Crossing', [
-                    'images/profile/Screenshot 2025-09-27 132113.png',
-                    'images/profile/Screenshot 2025-09-27 132157.png',
-                    'images/project1/Screenshot 2025-09-29 190511.png',
-                    'images/project1/Screenshot 2025-09-29 190353.png',
-                    'images/project1/Screenshot 2025-09-29 190443.png'
-                  ],  'Sistem ini menggunakan computer vision (YOLOV8) untuk mendeteksi pejalan kaki secara otomatis berdasarkan klasifikasi dan menentukan durasi lampu merah . '
-                  +'Sistem ini juga menggunakan sensor ultrasonic untuk mendeteksi jarak pengguna jalan apakah ingin menyeberang atau tidak dan juga sensor pir untuk mendeteksi gerakan'
-      + 'Fitur meliputi deteksi dewasa, anak-anak, dan pengguna kursi roda, toggle kamera real-time, '
-      + 'pencatatan log, hingga dashboard statistik harian & bulanan. '
-      + 'Dirancang untuk mendukung keselamatan penyeberangan bagi pengguna jalan dengan teknologi modern.')"
-                  class="mt-3 inline-block px-6 py-2 btn-glow text-sm bg-[#F4FEFE] text-[#1E3A46] rounded-full">
-            View Project
-          </button>
-        </div>
-      </div>
-      <div class="card overflow-hidden fade-up delay-100 relative group">
-        <div class="relative w-full h-48 overflow-hidden">
-          <img src="images/profile/Screenshot 2025-09-27 131811.png"
-               alt="Project 2 Thumbnail"
-               class="w-full h-48 object-cover">
-        </div>
-        <div class="p-4">
-          <h3 class="text-lg font-semibold text-[#F4FEFE]">Aviation monitoring </h3>
-          <p class="text-[#B4C3CC] text-sm"> Sistem monitoring avionik dan uji performa navigasi penerbangan (DVOR, DME, ILS, Radar). </p>
-          <button onclick="openModal('Aviation monitoring and Perfomance Check', [
-                    'images/profile/Screenshot 2025-09-27 131811.png',
-                    'images/profile/Screenshot 2025-09-27 131606.png',
-                    'images/project2/Screenshot 2025-09-29 194958.png',
-                    'images/project2/Screenshot 2025-09-29 195126.png',
-                    'images/project2/Screenshot 2025-09-29 195043.png',
-                    'images/project2/Screenshot 2025-09-29 195451.png',
-                    'images/project2/Screenshot 2025-09-29 195230.png'
-                  ], 'Platform ini dirancang untuk memonitor dan mengevaluasi sistem navigasi penerbangan '
-        + '(DVOR, DME, ILS, Radar). Data ground check dapat direkam, divisualisasikan dalam grafik performa, '
-        + 'dan diekspor ke laporan PDF/CSV. Sistem mendukung inspeksi berkala, analisis performa, serta '
-        + 'peningkatan keselamatan penerbangan.')"
-                  class="mt-3 inline-block px-6 py-2 btn-glow text-sm bg-[#F4FEFE] text-[#1E3A46] rounded-full">
-            View Project
-          </button>
-        </div>
-      </div>
-      <div class="card overflow-hidden fade-up delay-200 relative group">
-        <div class="relative w-full h-48 overflow-hidden">
-          <img src="images/project3/Screenshot 2025-09-29 003903.png"
-               alt="Project 3 Thumbnail"
-               class="w-full h-48 object-cover">
-        </div>
-        <div class="p-4">
-          <h3 class="text-lg font-semibold text-[#F4FEFE]">E-Commerce</h3>
-          <p class="text-[#B4C3CC] text-sm"> Platform belanja online yang dirancang untuk memberikan pengalaman pengguna terbaik. </p>
-          <button onclick="openModal('E-Coommerce', [
-                    'images/project3/Screenshot 2025-09-29 003903.png',
-                    'images/project3/Screenshot 2025-09-29 004018.png',
-                    'images/project3/Screenshot 2025-09-29 004109.png',
-                    'images/project3/Screenshot 2025-09-29 004328.png',
-                    'images/project3/Screenshot 2025-09-29 004413.png',
-                    'images/project3/Screenshot 2025-09-29 200107.png',
-                    'images/project3/Screenshot 2025-09-29 200331.png',
-                    'images/project3/Screenshot 2025-09-29 200422.png',
-                    'images/project3/Screenshot 2025-09-29 200510.png',
-                    'images/project3/Screenshot 2025-09-29 200538.png',
-                    'images/project3/Screenshot 2025-09-29 200640.png',
-                    'images/project3/Screenshot 2025-09-29 200708.png'
-                  ],  'Sistem ini menyediakan fitur lengkap untuk toko online, mulai dari katalog produk , '
-        + 'sale, tampilan home yang modern ,wishlist, keranjang belanja, hingga notifikasi status pesanan. '
-        + 'Admin dapat mengelola stok, promosi (flash sale), laporan penjualan, serta ekspor data melalui dashboard admin . '
-        + 'Dirancang dengan desain responsif, performa tinggi, dan kemudahan penggunaan bagi pelanggan maupun admin.')"
-                  class="mt-3 inline-block px-6 py-2 btn-glow text-sm bg-[#F4FEFE] text-[#1E3A46] rounded-full">
-            View Project
-          </button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div id="project-modal" 
-     class="fixed inset-0 bg-black/70 hidden z-50 
-            flex items-center justify-center">
-  <div class="swiper-container-glass relative max-w-3xl w-full mx-4 p-6 rounded-2xl shadow-2xl bg-white/10 border border-white/20    backdrop-blur-xl"> 
-    <button onclick="closeModal()" 
-            class="absolute top-3 right-3 text-[#F4FEFE] text-3xl">&times;</button>
-    <h3 id="modal-title" class="text-2xl font-bold gradient-text mb-6 text-center">Project Title</h3>
-    <div class="swiper mySwiper mb-6">
-      <div class="swiper-wrapper" id="modal-images"></div>
-      <div class="swiper-button-next text-white"></div>
-      <div class="swiper-button-prev text-white"></div>
-      <div class="swiper-pagination"></div>
-    </div>
-    <p id="modal-desc" 
-       class="text-[#B4C3CC] text-sm leading-relaxed text-center"></p>
-  </div>
-</div>
-  <section id="about" class="py-20 px-6 smooth-section1">
-    <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-4xl font-bold gradient-text fade-up mb-10">About Me</h2>
-      <p class="text-lg text-[#B4C3CC] leading-relaxed fade-up max-w-2xl mx-auto">
-        I'm Husni Syamsi, I specialize in telecommunications networks, IoT systems, AI, network architecture, and web programming. I develop innovative and scalable solutions that improve connectivity and drive digital transformation. In other areas of modern technology, I apply my expertise to make work easier.
-      </p>
-    </div>
-  </section>
-<section id="contact" class="py-20 px-6 smooth-section2">
-  <div class="max-w-7xl mx-auto fade-up">
-    <h2 class="text-4xl font-bold gradient-text text-center mb-6">Contact Me</h2>
-    <p class="text-center text-[#B4C3CC] mb-12 max-w-2xl mx-auto">
-      I’m open to discussing new projects, creative ideas, or opportunities. Reach out via the form or connect with me through social media.
-    </p>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-     <form id="contact-form" onsubmit="sendEmail(event)" 
-      class="space-y-6 bg-[rgba(255,255,255,0.08)] p-8 rounded-2xl backdrop-blur-lg border border-[rgba(255,255,255,0.1)] shadow-lg hover:shadow-2xl transition-shadow duration-500">
-  
-  <input type="text" name="user_name" placeholder="Your Name"  
-         class="w-full p-4 rounded-lg bg-[#182B31]/50 border border-[#B4C3CC]/30 text-[#F4FEFE] focus:outline-none" required>
-
-  <input type="email" name="user_email" placeholder="Your Email"  
-         class="w-full p-4 rounded-lg bg-[#182B31]/50 border border-[#B4C3CC]/30 text-[#F4FEFE] focus:outline-none" required>
-
-  <textarea name="message" placeholder="Your Message" 
-            class="w-full p-4 rounded-lg bg-[#182B31]/50 border border-[#B4C3CC]/30 text-[#F4FEFE] focus:outline-none h-40" required></textarea>
-
-  <button type="submit" id="send-btn"
-          class="w-full px-6 py-3 rounded-full font-medium btn-glow bg-[#F4FEFE] text-[#1E3A46] hover:scale-105 transition-transform flex items-center justify-center space-x-2">
-    <svg class="spinner animate-spin h-5 w-5 text-[#1E3A46] hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
-    </svg>
-    <span class="btn-text">Send Message</span>
-  </button>
-</form>
-<div id="popup" class="fixed inset-0 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-50">
-  <div class="bg-[#1E3A46]/90 backdrop-blur-xl rounded-3xl px-10 py-8 flex items-center gap-6 shadow-2xl transform scale-75 transition-transform duration-300">
-    <div id="popup-icon" class="text-6xl font-extrabold"></div>
-    <div id="popup-text" class="text-white text-xl font-semibold max-w-xs"></div>
-  </div>
-</div>
-
-      <div class="flex flex-col justify-start gap-2">
-        <div class="grid grid-cols-1 gap-4">
-          <div class="card p-6 flex items-center gap-4 hover:scale-105 transition-transform hover:shadow-lg">
-            <i class="fas fa-map-marker-alt text-2xl text-[#F4FEFE]"></i>
-            <div>
-              <p class="text-[#B4C3CC] text-sm">Location</p>
-              <p class="text-[#F4FEFE] font-semibold">Surabaya, Indonesia</p>
-            </div>
-          </div>
-        </div>
-        <div class="flex gap-6 mt-4 justify-center md:justify-start">
-          <a href="https://instagram.com/husniisy" target="_blank" class="text-[#F4FEFE] hover:text-[#B4C3CC] transition-colors text-3xl hover:scale-110 transform">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://wa.me/082331332723" target="_blank" class="text-[#F4FEFE] hover:text-[#B4C3CC] transition-colors text-3xl hover:scale-110 transform">
-            <i class="fab fa-whatsapp"></i>
-          </a>
-          <a href="https://github.com/username" target="_blank" class="text-[#F4FEFE] hover:text-[#B4C3CC] transition-colors text-3xl hover:scale-110 transform">
-            <i class="fab fa-github"></i>
-          </a>
-         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=husnisy2005@gmail.com" target="_blank"
-          class="inline-block text-[#F4FEFE] hover:text-[#B4C3CC] transition-transform duration-200 text-3xl hover:scale-110">
-          <i class="fas fa-envelope"></i>
-        </a>
-        </div>
-       <a href="#"
-            onclick="sendWhatsapp()"
-            class="mt-6 inline-block px-8 py-3 rounded-full font-medium btn-glow bg-[#F4FEFE] text-[#1E3A46] text-center hover:scale-105 transition-transform">
-            Let’s Collaborate
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-  <footer class="bg-[rgba(24,43,49,0.9)] text-[#F4FEFE] text-center py-6 border-t border-[rgba(24,43,49,0.9)]">
-    <p class="text-sm">&copy; 2025 Husni Syamsi. All rights reserved.</p>
-  </footer>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
+
+   document.addEventListener('DOMContentLoaded', function() {
+    const textElement = document.getElementById('typewriter-text');
+    const words = ["IoT Systems", "Artificial Intelligence", "Web Development"];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function type() {
+        const currentWord = words[wordIndex];
+        let displayText = currentWord.substring(0, charIndex);
+
+        textElement.innerHTML = displayText;
+        textElement.classList.add('typewriter-cursor');
+
+        if (!isDeleting && charIndex < currentWord.length) {
+            charIndex++;
+            setTimeout(type, 100); 
+        } else if (isDeleting && charIndex > 0) {
+            charIndex--;
+            setTimeout(type, 50); 
+        } else if (!isDeleting && charIndex === currentWord.length) {
+            isDeleting = true;
+            textElement.classList.remove('typewriter-cursor'); 
+            setTimeout(type, 1500); 
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            setTimeout(type, 300); 
+        }
+    }
+    setTimeout(type, 1000); 
       (function() {
     emailjs.init("2iAReO0m4_oNZYz8I"); 
   })();
