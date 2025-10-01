@@ -308,6 +308,27 @@
     min-height: 1.2em; 
 }
 
+@keyframes logo-scroll-right {
+  
+    0% { transform: translateX(-100%); } 
+    100% { transform: translateX(0%); }  
+}
+
+.logo-track {
+    width: 200%; 
+    animation: logo-scroll-right 60s linear infinite; 
+}
+
+
+.logo-track:hover {
+    animation-play-state: paused;
+}
+@media (max-width: 767px) {
+    .logo-track {
+        animation: logo-scroll-right 5s linear infinite; 
+    }
+}
+
 
   </style>
 </head>
