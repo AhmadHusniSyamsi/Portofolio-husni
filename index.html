@@ -1,887 +1,695 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/png" href="images/profile/Screenshot 2025-09-29 204916.png">
-  <title>Portofolio Husni</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-dymN6z8V++6Yg+UMz/PLawV9lVfQ1z1zjCgkS0w6u8Q1kg7jVObJRa+j0gKxhzPn7aQXWmJb9b0W5Fad2p7v0A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
-   <style>
-  body {
-    font-family: 'Poppins', 'Inter', sans-serif;
-    background: linear-gradient(-45deg, #182B31, #1E3A46, #58717D, #B4C3CC, #F4FEFE);
-    background-size: 400% 400%;
-    animation: gradientFlow 18s ease infinite;
-    color: #F4FEFE;
-    overflow-x: hidden;
-    }
-  h1, h2, h3, .gradient-text {
-  font-family: 'Inter', 'Poppins', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.5px;}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/profile/Screenshot 2025-09-29 204916.png">
+    <title>Portofolio Husni - Digital Rain (Responsive)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
+    <style>
+        /* === "DIGITAL RAIN" RESPONSIVE THEME by Gemini === */
+        :root {
+            --color-bg: #0A0A0F;
+            --color-text-primary: #E0E0E0;
+            --color-text-secondary: #8899AA;
+            --color-accent: #00BCD4; /* Cyan */
+            --color-surface: #1C2030;
+            --font-main: 'Space Grotesk', sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-main);
+            background-color: var(--color-bg);
+            color: var(--color-text-primary);
+            margin: 0;
+           overflow-x: hidden;
+        }
+        
+        #matrix-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        #main-container { display: flex; height: 100vh; }
+
+        /* --- Vertical Nav Blade (Desktop) --- */
+        #nav-blade {
+            width: 80px;
+            background-color: rgba(10, 10, 15, 0.6);
+            backdrop-filter: blur(10px);
+            border-right: 1px solid rgba(0, 188, 212, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 2rem;
+            z-index: 20;
+            transition: width 0.3s, bottom 0.3s, top 0.3s, height 0.3s;
+        }
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 80px;
+            color: var(--color-text-secondary);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: color 0.3s, background-color 0.3s;
+            position: relative;
+        }
+        .nav-item i { font-size: 1.5rem; margin-bottom: 5px; transition: transform 0.3s; }
+        .nav-item.active, .nav-item:hover { color: var(--color-accent); background-color: rgba(0, 188, 212, 0.1); }
+        .nav-item:hover i { transform: scale(1.1); }
+        .nav-item.active::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0;
+            height: 100%;
+            width: 4px;
+            background-color: var(--color-accent);
+            box-shadow: 0 0 10px var(--color-accent);
+        }
+
+        /* Tombol navigasi Swiper putih, bulat, clean */
 .swiper-button-next,
 .swiper-button-prev {
-  color: #F4FEFE !important; 
-  text-shadow: 0 0 12px rgba(244, 254, 254, 0.7);
+    color: white; /* ikon panah putih */
+    background: rgba(255, 255, 255, 0.1); /* sedikit transparan */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background 0.3s;
+    z-index: 10;
 }
 
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
 
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 18px; /* ukuran panah */
+    font-weight: bold;
+}
 .swiper-pagination-bullet {
-  background: rgba(244, 254, 254, 0.5) !important;
-  opacity: 0.6;
-  transition: all 0.3s ease;
+    background: white; /* warna titik */
+    opacity: 0.5;      /* transparansi default */
 }
+
 .swiper-pagination-bullet-active {
-  background: #F4FEFE !important;
-  box-shadow: 0 0 12px rgba(244, 254, 254, 0.9);
-  transform: scale(1.3);
-}
-
-@keyframes gradientFlow {
-   0% { background-position: 0% 50%; }
-   50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
- }
-
-    .glass-navbar {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      transition: top 0.4s ease, background 0.4s ease;
-    }
-    .nav-link {
-      position: relative;
-      padding-bottom: 4px;
-      transition: color 0.3s ease;
-    }
-    .nav-link::after {
-      content: "";
-      position: absolute;
-      width: 0%;
-      height: 2px;
-      left: 0;
-      bottom: 0;
-      background: #F4FEFE;
-      transition: width 0.3s ease;
-    }
-    .nav-link:hover::after {
-      width: 100%;
-    }
-
-    .gradient-text {
-      background: linear-gradient(90deg, #F4FEFE, #B4C3CC, #58717D);
-      background-size: 200% auto;
-      color: transparent;
-      -webkit-background-clip: text;
-      background-clip: text;
-      animation: shimmer 8s linear infinite;
-    }
-
-    @keyframes shimmer {
-      0% { background-position: 0% center; }
-      100% { background-position: 200% center; }
-    }
-
-    .btn-glow {
-      position: relative;
-      overflow: hidden;
-      transition: all 0.4s ease;
-    }
-    .btn-glow::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 200%;
-      height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
-      transition: all 0.5s ease;
-    }
-    .btn-glow:hover::before {
-      left: 100%;
-    }
-    .btn-glow:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 25px rgba(255,255,255,0.4);
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 14px;
-      transition: all 0.4s ease;
-    }
-    .card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
-    }
-
-    @keyframes fade-up {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .fade-up {
-      opacity: 0;
-      animation: fade-up 1s ease forwards;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
-    }
-    .float {
-      animation: float 4s ease-in-out infinite;
-    }
-
-    .smooth-section {
-      background: linear-gradient(to bottom, rgba(30,58,70,0.0), rgba(30,58,70,0.7) 50%, rgba(24,43,49,0.9) 100%);
-    }
-    .smooth-section1 {
-      background: linear-gradient(to bottom,  rgba(24,43,49,0.9), rgba(30,58,70,0.7) 50%, rgba(24,43,49,0.9) 100%);
-    }
-     .smooth-section2 {
-      background: linear-gradient(to bottom,  rgba(24,43,49,0.9),rgba(24,43,49,0.9) 50%, rgba(24,43,49,0.9) 100%);
-    }
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
-
-
-.splash-h {
-    font-family: 'Playfair Display', serif;
-    font-size: 8rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    position: relative;
-    color: transparent;
-    -webkit-text-stroke: 1.5px #F4FEFE;
-    background: linear-gradient(90deg, #F4FEFE, #B4C3CC, #58717D);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    opacity: 0;
-    transform: scale(0.8);
-    animation: 
-        fadeInScale 0.8s forwards ease-out, 
-        fillGradient 2.0s forwards,
-        floatPulse 3s ease-in-out infinite;
-}
-
-.splash-tagline {
-    opacity: 0;
-    color: #B4C3CC;
-    font-size: 1.25rem;
-    font-weight: 500;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    animation: fade-up 1s ease-out 1.5s forwards;
-}
-
-@keyframes fadeInScale {
-    0% { opacity: 0; transform: scale(0.8); }
-    100% { opacity: 1; transform: scale(1); }
-}
-
-@keyframes fillGradient {
-    0% { background-position: 0% center; -webkit-text-fill-color: transparent; }
-    40% { -webkit-text-fill-color: transparent; }
-    100% { background-position: 100% center; -webkit-text-fill-color: unset; }
-}
-
-@keyframes floatPulse {
-    0%, 100% {
-        text-shadow: 0 0 10px rgba(244,254,254,0.5), 0 0 20px rgba(88,113,125,0.4);
-    }
-    50% {
-        text-shadow: 0 0 15px rgba(244,254,254,0.9), 0 0 30px rgba(88,113,125,0.7);
-    }
-}
-
-.splash-fade {
-    opacity: 0;
-    transform: scale(1.1);
-    transition: opacity 0.8s ease-in, transform 0.8s ease-in; 
-}
-
-.skill-icon {
-  transition: all 0.4s ease;
-  cursor: pointer;
-}
-.skill-icon:hover {
-  transform: scale(1.2) rotate(8deg);
-  filter: drop-shadow(0 0 15px rgba(255,255,255,0.6));
-}
-.skill-icon i {
-  animation: floatIcon 4s ease-in-out infinite;
-}
-@keyframes floatIcon {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-#project-modal .modal-enter {
-  transform: scale(0.9);
-  opacity: 0;
-}
-#project-modal .modal-enter-active {
-  transform: scale(1);
-  opacity: 1;
-  transition: all 0.3s ease;
-}
-  #popup {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 9999;
-}
-
-  #popup.show {
+    background: white; /* warna titik aktif */
     opacity: 1;
-    pointer-events: auto;
-  }
-
-  #popup.show div {
-    transform: scale(1);
-  }
-
-  #popup-icon.text-green-500 {
-    color: #4ade80; 
-  }
-
-  #popup-icon.text-red-500 {
-    color: #f87171; 
-  }
-
-  #popup div {
-    transition: all 0.4s ease;
-  }
-
-  @media (max-width: 640px) {
-    #popup div {
-      flex-direction: column;
-      gap: 3;
-      padding: 20px;
-    }
-    #popup-icon {
-      font-size: 4rem;
-    }
-    #popup-text {
-      font-size: 1rem;
-      text-align: center;
-    }
-  }
-.logo-track {
-    width: 200%; 
-    animation: logo-scroll-right 60s linear infinite; 
-}
-.logo-track:hover {
-    animation-play-state: paused;
-}
-@media (max-width: 767px) {
-    .logo-track {
-        animation: logo-scroll-right 5s linear infinite; 
-    }
-}
-.typewriter-cursor::after {
-    content: "|";
-    display: inline-block;
-    animation: blink 0.7s infinite;
-    color: #F4FEFE;
-    margin-left: 5px;
-}
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
 }
 
-#typewriter-text {
-    min-height: 1.2em; 
-}
-
-@keyframes logo-scroll-right {
-  
-    0% { transform: translateX(-100%); } 
-    100% { transform: translateX(0%); }  
-}
-
-.logo-track {
-    width: 200%; 
-    animation: logo-scroll-right 60s linear infinite; 
-}
+/* Posisikan tombol di luar slide */
+.swiper-button-next { right: -20px; }
+.swiper-button-prev { left: -20px; }
 
 
-.logo-track:hover {
-    animation-play-state: paused;
-}
-@media (max-width: 767px) {
-    .logo-track {
-        animation: logo-scroll-right 5s linear infinite; 
-    }
-}
-     .glass-navbar {
-    -ms-overflow-style: none;
-    scrollbar-width: none; 
+        /* --- Content Area & Transitions --- */
+        #content-area { flex-grow: 1; position: relative; overflow: hidden; }
+        .content-section {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            padding: 4rem;
+            box-sizing: border-box;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            overflow-y: auto;
+        }
+        .content-section.active { opacity: 1; transform: translateX(0); pointer-events: auto; }
+        .content-section:not(.active) { pointer-events: none; }
+        .content-section::-webkit-scrollbar { width: 8px; }
+        .content-section::-webkit-scrollbar-track { background: transparent; }
+        .content-section::-webkit-scrollbar-thumb { background: var(--color-accent); border-radius: 4px; }
+
+        /* --- UI Components --- */
+        h1, h2 { color: var(--color-text-primary); }
+        h1 { font-size: 4rem; font-weight: 700; line-height: 1.2; }
+        h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; }
+        p { color: var(--color-text-secondary); line-height: 1.7; }
+        .btn {
+            display: inline-block; padding: 12px 28px; border: 2px solid var(--color-accent);
+            color: var(--color-accent); background: transparent; font-weight: 500;
+            letter-spacing: 0.05em; position: relative; overflow: hidden; transition: color 0.4s;
+        }
+        .btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background-color: var(--color-accent); transition: left 0.4s ease-out; z-index: 0; }
+        .btn:hover::before { left: 0; }
+        .btn span { position: relative; z-index: 1; transition: color 0.4s; }
+        .btn:hover span { color: var(--color-bg); }
+
+        .project-card {
+            background-color: var(--color-surface);
+            border: 1px solid rgba(0, 188, 212, 0.2);
+            padding: 2rem; border-radius: 8px;
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+        }
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(0, 188, 212, 0.25); }
+        .project-card h3 { color: var(--color-accent); font-size: 1.7rem; }
+        .project-image-placeholder { height: 180px; background-color: #2D3748; border-radius: 4px; margin-bottom: 1.5rem; overflow: hidden; }
+        .project-image-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+        
+        /* === RESPONSIVE STYLES for Mobile (max-width: 768px) === */
+        @media (max-width: 768px) {
+            #main-container { flex-direction: column; }
+            
+            /* --- Bottom Navigation for Mobile --- */
+            #nav-blade {
+                width: 100%;
+                height: 70px;
+                position: fixed;
+                top: auto;
+                bottom: 0;
+                flex-direction: row;
+                border-right: none;
+                border-top: 1px solid rgba(0, 188, 212, 0.2);
+                padding: 0;
+            }
+            .nav-item {
+                flex-grow: 1;
+                height: 100%;
+            }
+            .nav-item i { font-size: 1.25rem; margin-bottom: 2px; }
+            .nav-item span { font-size: 0.6rem; }
+            .nav-item.active::before {
+                width: 100%;
+                height: 3px;
+                top: 0;
+                left: 0;
+            }
+
+            /* --- Adjust Content Area for Bottom Nav --- */
+            .content-section {
+                padding: 2rem 1.5rem 80px 1.5rem; /* Add padding at the bottom */
+            }
+
+            /* --- Adjust Typography for Mobile --- */
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 1.75rem; }
+            p { font-size: 1rem; }
+            .project-card h3 { font-size: 1.5rem; }
+            
+            /* --- Adjust Layouts for Mobile --- */
+            #about-section .grid {
+                grid-template-columns: 1fr;
+            }
+            #projects-section .grid {
+                grid-template-columns: 1fr;
+            }
+            #home-section .btn {
+                padding: 10px 20px;
+                font-size: 0.8rem;
+            }
+        }
+         #cvContent {
+            display: none;
+            background-color: white !important;
+            color: black !important;
+            padding: 30px;
+            width: 210mm;
+            min-height: 297mm;
+            box-shadow: none;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            font-family: Arial, sans-serif;
+            font-size: 11pt;
+        }
+        #cvContent h1 { color: #0A192F !important; font-size: 24pt; margin-bottom: 5px ;   }
+        #cvContent h2 { color: #0A192F !important; font-size: 16pt; border-bottom: 1px solid #000000ff; padding-bottom: 5px; margin-top: 20px; }
+        #cvContent p, #cvContent ul li { color: #000000ff !important; line-height: 1.5; margin-bottom: 5px; }
+        #cvContent ul { list-style-type: disc; margin-left: 20px;  }
+        #cvContent strong { font-weight: bold; }
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0,188,212,0.1);
+    color: white;
+    font-size: 18px;
+    transition: all 0.3s ease;
 }
 
-.glass-navbar::-webkit-scrollbar {
-    display: none;
+.social-icon:hover {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+    transform: scale(1.1);
 }
 
+/* Skill Icon */
+.skill-icon { transition: transform 0.3s ease; }
+.skill-icon:hover { transform: scale(1.2); }
 
-  </style>
+/* Horizontal scrolling animation */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.animate-scroll { 
+    display: flex; 
+    animation: scroll 20s linear infinite; 
+}
+#matrix-bg {
+    opacity: 1;
+}
+.btn span {
+    position: relative; /* pastikan berada di atas pseudo-element */
+    z-index: 1;
+    transition: color 0.4s;
+}
+
+.btn:hover span {
+    color: #000000; /* hitam saat hover */
+}
+
+    </style>
 </head>
-<body class="scroll-smooth">
-  <div id="splash-screen" class="fixed inset-0 flex items-center justify-center bg-[#182B31] z-50">
-  <h1 class="splash-h">H</h1>
+<body>
+    
+    <canvas id="matrix-bg"></canvas>
+
+    <div id="main-container">
+        <nav id="nav-blade">
+            <a href="#home" class="nav-item active" data-target="home"><i class="fas fa-home"></i><span>Home</span></a>
+            <a href="#about" class="nav-item" data-target="about"><i class="fas fa-user-astronaut"></i><span>About</span></a>
+            <a href="#projects" class="nav-item" data-target="projects"><i class="fas fa-rocket"></i><span>Projects</span></a>
+            <a href="#contact" class="nav-item" data-target="contact"><i class="fas fa-at"></i><span>Contact</span></a>
+        </nav>
+
+        <div id="content-area">
+        <section id="home-section" class="content-section active flex flex-col items-center justify-start text-center px-4 sm:px-6 md:px-12 pt-12 pb-12 ">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">Husni Syamsi</h1>
+    <p class="text-lg sm:text-xl md:text-2xl max-w-2xl mt-4 text-gray-300">Crafting elegant solutions at the intersection of IoT, AI, and advanced web development.</p>
+    <div class="mt-8 sm:mt-12 flex flex-col sm:flex-row gap-4 sm:gap-6">
+        <a href="#projects" class="btn" data-target="projects"><span>Explore My Work</span></a>
+        <button id="downloadCV" class="btn"><span>Download CV</span></button>
+    </div>
+
+
+
+    <!-- === Skills Section === -->
+    <div class="max-w-7xl mx-auto text-center mt-12 sm:mt-20 w-full">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-14 text-[#F4FEFE]">Skills</h2>
+        
+        <!-- Skill Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-12">
+            <div class="card p-4 sm:p-6 bg-transparent border-2 border-[#00BCD4] rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:scale-105">
+                <h3 class="text-lg sm:text-xl font-semibold text-[#F4FEFE] mb-2 sm:mb-3">Internet Of Things</h3>
+                <p class="text-[#B4C3CC] text-sm sm:text-base">Developing IoT solutions that combine innovation and functionality.</p>
+            </div>
+            <div class="card p-4 sm:p-6 bg-transparent border-2 border-[#00BCD4] rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:scale-105">
+                <h3 class="text-lg sm:text-xl font-semibold text-[#F4FEFE] mb-2 sm:mb-3">Web Development</h3>
+                <p class="text-[#B4C3CC] text-sm sm:text-base">Optimized websites, simple and reliable.</p>
+            </div>
+            <div class="card p-4 sm:p-6 bg-transparent border-2 border-[#00BCD4] rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:scale-105">
+                <h3 class="text-lg sm:text-xl font-semibold text-[#F4FEFE] mb-2 sm:mb-3">Artificial Intelligence</h3>
+                <p class="text-[#B4C3CC] text-sm sm:text-base">Designing intelligent systems that learn, adapt, and optimize solutions.</p>
+            </div>
+        </div>
+
+        <!-- Skill Icons -->
+      <!-- Skill Icons -->
+<div class="overflow-hidden mt-16 sm:mt-8 pb-20 sm:pb-8"> <!-- pb-16 untuk mobile, sm:pb-8 untuk desktop -->
+    <div class="flex logo-track flex-nowrap items-center w-full animate-scroll gap-6 sm:gap-12 md:gap-20">
+        <!-- Icons -->
+        <div class="flex justify-around items-center gap-6 sm:gap-12 flex-shrink-0">
+            <i class="fab fa-html5 text-4xl sm:text-5xl md:text-6xl text-orange-500"></i>
+            <i class="fab fa-css3-alt text-4xl sm:text-5xl md:text-6xl text-blue-500"></i>
+            <i class="fab fa-js text-4xl sm:text-5xl md:text-6xl text-yellow-400"></i>
+            <i class="fab fa-python text-4xl sm:text-5xl md:text-6xl text-blue-400"></i>
+            <i class="fab fa-laravel text-4xl sm:text-5xl md:text-6xl text-red-500"></i>
+            <i class="fab fa-github text-4xl sm:text-5xl md:text-6xl text-gray-300"></i>
+            <i class="fas fa-robot text-4xl sm:text-5xl md:text-6xl text-green-400"></i>
+            <i class="fas fa-wifi text-4xl sm:text-5xl md:text-6xl text-teal-400"></i>
+            <i class="fas fa-microchip text-4xl sm:text-5xl md:text-6xl text-purple-400"></i>
+            <i class="fas fa-cloud text-4xl sm:text-5xl md:text-6xl text-sky-400"></i>
+        </div>
+        <!-- Duplicate for continuous scroll -->
+        <div class="flex justify-around items-center gap-6 sm:gap-12 flex-shrink-0">
+            <i class="fab fa-html5 text-4xl sm:text-5xl md:text-6xl text-orange-500"></i>
+            <i class="fab fa-css3-alt text-4xl sm:text-5xl md:text-6xl text-blue-500"></i>
+            <i class="fab fa-js text-4xl sm:text-5xl md:text-6xl text-yellow-400"></i>
+            <i class="fab fa-python text-4xl sm:text-5xl md:text-6xl text-blue-400"></i>
+            <i class="fab fa-laravel text-4xl sm:text-5xl md:text-6xl text-red-500"></i>
+            <i class="fab fa-github text-4xl sm:text-5xl md:text-6xl text-gray-300"></i>
+            <i class="fas fa-robot text-4xl sm:text-5xl md:text-6xl text-green-400"></i>
+            <i class="fas fa-wifi text-4xl sm:text-5xl md:text-6xl text-teal-400"></i>
+            <i class="fas fa-microchip text-4xl sm:text-5xl md:text-6xl text-purple-400"></i>
+            <i class="fas fa-cloud text-4xl sm:text-5xl md:text-6xl text-sky-400"></i>
+        </div>
+    </div>
 </div>
-   <header id="navbar" class="fixed w-full z-40 top-0 transition-all duration-500">
-    <div class="max-w-7xl mx-auto"> 
-        <div class="flex items-center justify-center h-20">
-            
-            <nav class="glass-navbar rounded-full shadow-lg overflow-x-auto whitespace-nowrap p-2">
-                <div class="flex items-center gap-6 px-4">
-                    <a href="#home" class="nav-link active flex-shrink-0">Home</a>
-                    <a href="#about" class="nav-link flex-shrink-0">About</a>
-                    <a href="#skills" class="nav-link flex-shrink-0">Skills</a>
-                    <a href="#projects" class="nav-link flex-shrink-0">Projects</a>
-                    <a href="#contact" class="nav-link flex-shrink-0">Contact</a>
+
+    </div>
+</section>
+
+
+
+            <section id="about-section" class="content-section">
+                <div class="max-w-4xl mx-auto">
+                    <h2>About Me</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10">
+                        <div>
+                            <p class="mb-6">Hello! I'm Husni, a developer driven by curiosity and a passion for creating impactful technology. My journey began with exploring telecommunication systems, leading me to a deep dive into the fascinating worlds of AI, IoT, and modern web frameworks.</p>
+                            <p>I thrive on turning complex problems into intuitive and high-performing applications. Whether it's optimizing data flows for smart devices or building intelligent systems, I'm always looking for innovative ways to leverage technology.</p>
+                             <div class="flex gap-4 mt-6">
+                    <a href="https://github.com/username" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/username" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://whatsapp.com/username" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://instagram.com/husniisy" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="mailto:husnisy2005@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
                 </div>
-            </nav>
-            
-        </div>
-    </div>
-</header>
-  <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-28 md:pt-0">
-    <div class="max-w-4xl mx-auto">
-        <h1 class="text-6xl sm:text-7xl lg:text-8xl font-extrabold mb-6 gradient-text animate-fade-in-up" style="animation-delay: 0.2s;">
-            Hi, I'm Husni Syamsi
-        </h1>
-        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-8 text-[#B4C3CC] animate-fade-in-up" style="animation-delay: 0.4s;">
-            Building Solutions in <span id="typewriter-text" class="text-[#F4FEFE] font-bold relative inline-block"></span>
-        </h2>
-        <p class="text-xl md:text-2xl text-[#F4FEFE]/80 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style="animation-delay: 0.6s;">
-            Solving complex challenges with innovative, scalable technology tailored for the future.
-        </p>
-       <div class="mt-12 flex flex-col items-center gap-6 animate-fade-in-up md:flex-row md:justify-center" style="animation-delay: 0.8s;">
-          <a href="#projects" class="mx-auto md:mx-0 px-8 py-3 rounded-full text-lg font-medium btn-glow bg-[#F4FEFE] text-[#1E3A46]">
-              Explore My Work
-          </a>
-          <a href="#contact" class="mx-auto md:mx-0 px-8 py-3 rounded-full text-lg font-medium btn-glow border border-[#F4FEFE] text-[#F4FEFE]">
-              Contact Me
-          </a>
-      </div>  
-    </div>
-</section>
-<section id="skills" class="py-20 px-6">
-    <div class="max-w-7xl mx-auto text-center">
-      <h2 class="text-4xl font-bold mb-14 gradient-text fade-up">My Skills</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="card p-6 fade-up">
-          <h3 class="text-xl font-semibold text-[#F4FEFE] mb-3">Internet Of Things </h3>
-          <p class="text-[#B4C3CC]">Developing IoT solutions that combine innovation and functionality.</p>
-        </div>
-        <div class="card p-6 fade-up delay-100">
-          <h3 class="text-xl font-semibold text-[#F4FEFE] mb-3">Web Development</h3>
-          <p class="text-[#B4C3CC]">Optimized websites, simple and reliable..</p>
-        </div>
-        <div class="card p-6 fade-up delay-200">
-          <h3 class="text-xl font-semibold text-[#F4FEFE] mb-3">Artificial Intelligence </h3>
-          <p class="text-[#B4C3CC]">Designing intelligent systems that learn, adapt, and optimize solutions.</p>
-        </div>
-      </div>
-    </div>
-     <div class="mt-16 fade-up">
-    <div class="overflow-hidden">
-        <div class="flex logo-track flex-nowrap items-center w-full"> 
-            
-            <div class="flex justify-around items-center gap-12 md:gap-20 flex-shrink-0 px-10">
-                <div class="skill-icon group"><i class="fab fa-html5 text-6xl text-orange-500"></i></div>
-                <div class="skill-icon group"><i class="fab fa-css3-alt text-6xl text-blue-500"></i></div>
-                <div class="skill-icon group"><i class="fab fa-js text-6xl text-yellow-400"></i></div>
-                <div class="skill-icon group"><i class="fab fa-python text-6xl text-blue-400"></i></div>
-                <div class="skill-icon group"><i class="fab fa-laravel text-6xl text-red-500"></i></div>
-                <div class="skill-icon group"><i class="fab fa-github text-6xl text-gray-300"></i></div>
-                <div class="skill-icon group"><i class="fas fa-robot text-6xl text-green-400"></i></div>
-                <div class="skill-icon group"><i class="fas fa-wifi text-6xl text-teal-400"></i></div>
-                <div class="skill-icon group"><i class="fas fa-microchip text-6xl text-purple-400"></i></div>
-                <div class="skill-icon group"><i class="fas fa-cloud text-6xl text-sky-400"></i></div>
-            </div>
-
-            <div class="flex justify-around items-center gap-12 md:gap-20 flex-shrink-0 px-10">
-                <div class="skill-icon group"><i class="fab fa-html5 text-6xl text-orange-500"></i></div>
-                <div class="skill-icon group"><i class="fab fa-css3-alt text-6xl text-blue-500"></i></div>
-                <div class="skill-icon group"><i class="fab fa-js text-6xl text-yellow-400"></i></div>
-                <div class="skill-icon group"><i class="fab fa-python text-6xl text-blue-400"></i></div>
-                <div class="skill-icon group"><i class="fab fa-laravel text-6xl text-red-500"></i></div>
-                <div class="skill-icon group"><i class="fab fa-github text-6xl text-gray-300"></i></div>
-                <div class="skill-icon group"><i class="fas fa-robot text-6xl text-green-400"></i></div>
-                <div class="skill-icon group"><i class="fas fa-wifi text-6xl text-teal-400"></i></div>
-                <div class="skill-icon group"><i class="fas fa-microchip text-6xl text-purple-400"></i></div>
-                <div class="skill-icon group"><i class="fas fa-cloud text-6xl text-sky-400"></i></div>
-            </div>
-
-        </div>
-    </div>
-</div>
-</section>
-<section id="projects" class="py-20 px-6 smooth-section">
-  <div class="max-w-7xl mx-auto">
-    <h2 class="text-4xl font-bold text-center mb-14 gradient-text fade-up">Featured Projects</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="card overflow-hidden fade-up relative group">
-        <div class="relative w-full h-48 overflow-hidden">
-          <img src="images/profile/Screenshot 2025-09-27 132113.png"
-               alt="Project 1 Thumbnail"
-               class="w-full h-48 object-cover">
-        </div>
-        <div class="p-4">
-          <h3 class="text-lg font-semibold text-[#F4FEFE]">Automatic Crossing</h3>
-          <p class="text-[#B4C3CC] text-sm"> Sistem penyeberangan jalan otomatis berbasis kamera dan AI untuk mendeteksi pejalan kaki </p>
-          <button onclick="openModal('Automatic Crossing', [
-                    'images/profile/Screenshot 2025-09-27 132113.png',
-                    'images/profile/Screenshot 2025-09-27 132157.png',
-                    'images/project1/Screenshot 2025-09-29 190511.png',
-                    'images/project1/Screenshot 2025-09-29 190353.png',
-                    'images/project1/Screenshot 2025-09-29 190443.png'
-                  ],  'Sistem ini menggunakan computer vision (YOLOV8) untuk mendeteksi pejalan kaki secara otomatis berdasarkan klasifikasi dan menentukan durasi lampu merah . '
-                  +'Sistem ini juga menggunakan sensor ultrasonic untuk mendeteksi jarak pengguna jalan apakah ingin menyeberang atau tidak dan juga sensor pir untuk mendeteksi gerakan'
-      + 'Fitur meliputi deteksi dewasa, anak-anak, dan pengguna kursi roda, toggle kamera real-time, '
-      + 'pencatatan log, hingga dashboard statistik harian & bulanan. '
-      + 'Dirancang untuk mendukung keselamatan penyeberangan bagi pengguna jalan dengan teknologi modern.')"
-                  class="mt-3 inline-block px-6 py-2 btn-glow text-sm bg-[#F4FEFE] text-[#1E3A46] rounded-full">
-            View Project
-          </button>
-        </div>
-      </div>
-      <div class="card overflow-hidden fade-up delay-100 relative group">
-        <div class="relative w-full h-48 overflow-hidden">
-          <img src="images/profile/Screenshot 2025-09-27 131811.png"
-               alt="Project 2 Thumbnail"
-               class="w-full h-48 object-cover">
-        </div>
-        <div class="p-4">
-          <h3 class="text-lg font-semibold text-[#F4FEFE]">Aviation monitoring </h3>
-          <p class="text-[#B4C3CC] text-sm"> Sistem monitoring avionik dan uji performa navigasi penerbangan (DVOR, DME, ILS, Radar). </p>
-          <button onclick="openModal('Aviation monitoring and Perfomance Check', [
-                    'images/profile/Screenshot 2025-09-27 131811.png',
-                    'images/profile/Screenshot 2025-09-27 131606.png',
-                    'images/project2/Screenshot 2025-09-29 194958.png',
-                    'images/project2/Screenshot 2025-09-29 195126.png',
-                    'images/project2/Screenshot 2025-09-29 195043.png',
-                    'images/project2/Screenshot 2025-09-29 195451.png',
-                    'images/project2/Screenshot 2025-09-29 195230.png'
-                  ], 'Platform ini dirancang untuk memonitor dan mengevaluasi sistem navigasi penerbangan '
-        + '(DVOR, DME, ILS, Radar). Data ground check dapat direkam, divisualisasikan dalam grafik performa, '
-        + 'dan diekspor ke laporan PDF/CSV. Sistem mendukung inspeksi berkala, analisis performa, serta '
-        + 'peningkatan keselamatan penerbangan.')"
-                  class="mt-3 inline-block px-6 py-2 btn-glow text-sm bg-[#F4FEFE] text-[#1E3A46] rounded-full">
-            View Project
-          </button>
-        </div>
-      </div>
-      <div class="card overflow-hidden fade-up delay-200 relative group">
-        <div class="relative w-full h-48 overflow-hidden">
-          <img src="images/project3/Screenshot 2025-09-29 003903.png"
-               alt="Project 3 Thumbnail"
-               class="w-full h-48 object-cover">
-        </div>
-        <div class="p-4">
-          <h3 class="text-lg font-semibold text-[#F4FEFE]">E-Commerce</h3>
-          <p class="text-[#B4C3CC] text-sm"> Platform belanja online yang dirancang untuk memberikan pengalaman pengguna terbaik. </p>
-          <button onclick="openModal('E-Coommerce', [
-                    'images/project3/Screenshot 2025-09-29 003903.png',
-                    'images/project3/Screenshot 2025-09-29 004018.png',
-                    'images/project3/Screenshot 2025-09-29 004109.png',
-                    'images/project3/Screenshot 2025-09-29 004328.png',
-                    'images/project3/Screenshot 2025-09-29 004413.png',
-                    'images/project3/Screenshot 2025-09-29 200107.png',
-                    'images/project3/Screenshot 2025-09-29 200331.png',
-                    'images/project3/Screenshot 2025-09-29 200422.png',
-                    'images/project3/Screenshot 2025-09-29 200510.png',
-                    'images/project3/Screenshot 2025-09-29 200538.png',
-                    'images/project3/Screenshot 2025-09-29 200640.png',
-                    'images/project3/Screenshot 2025-09-29 200708.png'
-                  ],  'Sistem ini menyediakan fitur lengkap untuk toko online, mulai dari katalog produk , '
-        + 'sale, tampilan home yang modern ,wishlist, keranjang belanja, hingga notifikasi status pesanan. '
-        + 'Admin dapat mengelola stok, promosi (flash sale), laporan penjualan, serta ekspor data melalui dashboard admin . '
-        + 'Dirancang dengan desain responsif, performa tinggi, dan kemudahan penggunaan bagi pelanggan maupun admin.')"
-                  class="mt-3 inline-block px-6 py-2 btn-glow text-sm bg-[#F4FEFE] text-[#1E3A46] rounded-full">
-            View Project
-          </button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div id="project-modal" 
-     class="fixed inset-0 bg-black/70 hidden z-50 
-            flex items-center justify-center">
-  <div class="swiper-container-glass relative max-w-3xl w-full mx-4 p-6 rounded-2xl shadow-2xl bg-white/10 border border-white/20    backdrop-blur-xl"> 
-    <button onclick="closeModal()" 
-            class="absolute top-3 right-3 text-[#F4FEFE] text-3xl">&times;</button>
-    <h3 id="modal-title" class="text-2xl font-bold gradient-text mb-6 text-center">Project Title</h3>
-    <div class="swiper mySwiper mb-6">
-      <div class="swiper-wrapper" id="modal-images"></div>
-      <div class="swiper-button-next text-white"></div>
-      <div class="swiper-button-prev text-white"></div>
-      <div class="swiper-pagination"></div>
-    </div>
-    <p id="modal-desc" 
-       class="text-[#B4C3CC] text-sm leading-relaxed text-center"></p>
-  </div>
-</div>
- <section id="about" class="py-20 px-6 smooth-section1">
-    <div class="max-w-6xl mx-auto">
-        <h2 class="text-4xl font-bold gradient-text text-center mb-16">About Me</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
-            <div class="w-full max-w-sm mx-auto">
-                <div class="relative group">
-                    <div class="absolute -inset-3 rounded-full bg-gradient-to-tr from-[#F4FEFE] via-[#B4C3CC] to-[#58717D] opacity-60 blur-2xl group-hover:opacity-90 group-hover:blur-3xl transition-all duration-700"></div>
-                    <div class="absolute -inset-1 rounded-full bg-gradient-to-tr from-[#B4C3CC]/40 via-[#F4FEFE]/30 to-[#58717D]/40 opacity-50 blur-md"></div>
-                    <div class="relative w-full h-auto aspect-square rounded-full overflow-hidden border-4 border-[#F4FEFE]/30 shadow-[0_20px_40px_rgba(0,0,0,0.4),0_0_80px_rgba(244,254,254,0.3)] group-hover:scale-105 group-hover:shadow-[0_25px_50px_rgba(0,0,0,0.6),0_0_100px_rgba(244,254,254,0.4)] transition-all duration-700 float">
-                        <img src="images/profile/WhatsApp Image 2025-09-28 at 14.52.23_1e9d46dc.jpg" alt="Profile Picture" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                        <div class=" w-full aspect-square overflow-hidden rounded-lg">
+                            <img src="images/profile/WhatsApp Image 2025-09-28 at 14.52.23_1e9d46dc.jpg" alt="Husni Syamsi Profile" class="w-full h-full object-cover">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="text-center md:text-left">
-                <p class="text-lg text-[#B4C3CC] leading-relaxed">
-                    I'm Husni Syamsi, I specialize in telecommunications networks, IoT systems, AI, network architecture, and web programming. I develop innovative and scalable solutions that improve connectivity and drive digital transformation. In other areas of modern technology, I apply my expertise to make work easier.
-                </p>
-            </div>
+            </section>
+
+            <section id="projects-section" class="content-section">
+                <h2 class="text-center">Featured Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+                        <div class="card p-4 sm:p-6 bg-transparent border-2 border-[#00BCD4] rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:scale-105">
+                        <div class="project-image-placeholder"><img src="images/profile/Screenshot 2025-09-27 132113.png" alt="Automatic Crossing"></div>
+                        <h3>Automatic Crossing</h3>
+                        <p class="mt-2">AI-powered pedestrian detection for enhanced road safety.</p>
+                         <button onclick="openModal('Automatic Crossing', [
+                                        'images/profile/Screenshot 2025-09-27 132113.png',
+                                        'images/profile/Screenshot 2025-09-27 132157.png',
+                                        'images/project1/Screenshot 2025-09-29 190511.png',
+                                        'images/project1/Screenshot 2025-09-29 190353.png',
+                                        'images/project1/Screenshot 2025-09-29 190443.png'
+                                    ],  'Sistem ini menggunakan computer vision (YOLOV8) untuk mendeteksi pejalan kaki secara otomatis berdasarkan klasifikasi dan menentukan durasi lampu merah . '
+                                    +'Sistem ini juga menggunakan sensor ultrasonic untuk mendeteksi jarak pengguna jalan apakah ingin menyeberang atau tidak dan juga sensor pir untuk mendeteksi gerakan'
+                        + 'Fitur meliputi deteksi dewasa, anak-anak, dan pengguna kursi roda, toggle kamera real-time, '
+                        + 'pencatatan log, hingga dashboard statistik harian & bulanan. '
+                        + 'Dirancang untuk mendukung keselamatan penyeberangan bagi pengguna jalan dengan teknologi modern.')"
+                                    class="btn text-sm mt-6 px-4 py-2"><span>View Details</span>
+                            </button>
+                            </div>
+                        <div class="card p-4 sm:p-6 bg-transparent border-2 border-[#00BCD4] rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:scale-105">
+                         <div class="project-image-placeholder"><img src="/images/profile/Screenshot 2025-09-27 131811.png" alt="Aviation Monitoring"></div>
+                        <h3>Aviation Monitoring</h3>
+                        <p class="mt-2">Comprehensive platform for avionics performance analysis and reporting.</p>
+                        <button onclick="openModal('Aviation monitoring and Perfomance Check', [
+                                'images/profile/Screenshot 2025-09-27 131811.png',
+                                'images/profile/Screenshot 2025-09-27 131606.png',
+                                'images/project2/Screenshot 2025-09-29 194958.png',
+                                'images/project2/Screenshot 2025-09-29 195126.png',
+                                'images/project2/Screenshot 2025-09-29 195043.png',
+                                'images/project2/Screenshot 2025-09-29 195451.png',
+                                'images/project2/Screenshot 2025-09-29 195230.png'
+                            ], 'Platform ini dirancang untuk memonitor dan mengevaluasi sistem navigasi penerbangan '
+                    + '(DVOR, DME, ILS, Radar). Data ground check dapat direkam, divisualisasikan dalam grafik performa, '
+                    + 'dan diekspor ke laporan PDF/CSV. Sistem mendukung inspeksi berkala, analisis performa, serta '
+                    + 'peningkatan keselamatan penerbangan.')" class="btn text-sm mt-6 px-4 py-2"><span>View Details</span></button>
+                    </div>
+                        <div class="card p-4 sm:p-6 bg-transparent border-2 border-[#00BCD4] rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:scale-105">
+                         <div class="project-image-placeholder"><img src="images/project3/Screenshot 2025-09-29 003903.png" alt="E-Commerce Platform"></div>
+                        <h3>E-Commerce Platform</h3>
+                        <p class="mt-2">Full-stack Laravel application featuring product management, cart, and checkout.</p>
+                        <button onclick="openModal('E-Coommerce', [
+                                    'images/project3/Screenshot 2025-09-29 003903.png',
+                                    'images/project3/Screenshot 2025-09-29 004018.png',
+                                    'images/project3/Screenshot 2025-09-29 004109.png',
+                                    'images/project3/Screenshot 2025-09-29 004328.png',
+                                    'images/project3/Screenshot 2025-09-29 004413.png',
+                                    'images/project3/Screenshot 2025-09-29 200107.png',
+                                    'images/project3/Screenshot 2025-09-29 200331.png',
+                                    'images/project3/Screenshot 2025-09-29 200422.png',
+                                    'images/project3/Screenshot 2025-09-29 200510.png',
+                                    'images/project3/Screenshot 2025-09-29 200538.png',
+                                    'images/project3/Screenshot 2025-09-29 200640.png',
+                                    'images/project3/Screenshot 2025-09-29 200708.png'
+                                ],  'Sistem ini menyediakan fitur lengkap untuk toko online, mulai dari katalog produk , '
+                        + 'sale, tampilan home yang modern ,wishlist, keranjang belanja, hingga notifikasi status pesanan. '
+                        + 'Admin dapat mengelola stok, promosi (flash sale), laporan penjualan, serta ekspor data melalui dashboard admin . '
+                        + 'Dirancang dengan desain responsif, performa tinggi, dan kemudahan penggunaan bagi pelanggan maupun admin.')" class="btn text-sm mt-6 px-4 py-2"><span>View Details</span></button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact-section" class="content-section flex flex-col items-center justify-center">
+                 <div class="max-w-2xl w-full text-center">
+                    <h2>Get In Touch</h2>
+                    <p class="text-lg mb-8">Ready to collaborate on a new project or just want to chat? Fill out the form below!</p>
+                    <form id="contact-form" onsubmit="sendEmail(event)" class="space-y-6">
+                        <input type="text" name="user_name" placeholder="Your Name" class="w-full p-4 bg-transparent border border-[var(--color-surface)] rounded-md focus:border-[var(--color-accent)] focus:outline-none transition-all" required>
+                        <input type="email" name="user_email" placeholder="Your Email" class="w-full p-4 bg-transparent border border-[var(--color-surface)] rounded-md focus:border-[var(--color-accent)] focus:outline-none transition-all" required>
+                        <textarea name="message" placeholder="Your Message" class="w-full p-4 h-32 bg-transparent border border-[var(--color-surface)] rounded-md focus:border-[var(--color-accent)] focus:outline-none transition-all" required></textarea>
+                        <button type="submit" id="send-btn" class="btn w-full"><span>Send Message</span></button>
+                       <a href="#" onclick="sendWhatsapp()" class="btn w-full"><span>Let’s Collaborate</span></a>                  
+                    </form>
+                </div>
+            </section>
         </div>
     </div>
-  </section>
-<section id="contact" class="py-20 px-6 smooth-section2">
-  <div class="max-w-7xl mx-auto fade-up">
-    <h2 class="text-4xl font-bold gradient-text text-center mb-6">Contact Me</h2>
-    <p class="text-center text-[#B4C3CC] mb-12 max-w-2xl mx-auto">
-      I’m open to discussing new projects, creative ideas, or opportunities. Reach out via the form or connect with me through social media.
-    </p>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-     <form id="contact-form" onsubmit="sendEmail(event)" 
-      class="space-y-6 bg-[rgba(255,255,255,0.08)] p-8 rounded-2xl backdrop-blur-lg border border-[rgba(255,255,255,0.1)] shadow-lg hover:shadow-2xl transition-shadow duration-500">
-  
-  <input type="text" name="user_name" placeholder="Your Name"  
-         class="w-full p-4 rounded-lg bg-[#182B31]/50 border border-[#B4C3CC]/30 text-[#F4FEFE] focus:outline-none" required>
-
-  <input type="email" name="user_email" placeholder="Your Email"  
-         class="w-full p-4 rounded-lg bg-[#182B31]/50 border border-[#B4C3CC]/30 text-[#F4FEFE] focus:outline-none" required>
-
-  <textarea name="message" placeholder="Your Message" 
-            class="w-full p-4 rounded-lg bg-[#182B31]/50 border border-[#B4C3CC]/30 text-[#F4FEFE] focus:outline-none h-40" required></textarea>
-
-  <button type="submit" id="send-btn"
-          class="w-full px-6 py-3 rounded-full font-medium btn-glow bg-[#F4FEFE] text-[#1E3A46] hover:scale-105 transition-transform flex items-center justify-center space-x-2">
-    <svg class="spinner animate-spin h-5 w-5 text-[#1E3A46] hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
-    </svg>
-    <span class="btn-text">Send Message</span>
-  </button>
-</form>
-<div id="popup" class="fixed inset-0 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-50">
-  <div class="bg-[#1E3A46]/90 backdrop-blur-xl rounded-3xl px-10 py-8 flex items-center gap-6 shadow-2xl transform scale-75 transition-transform duration-300">
-    <div id="popup-icon" class="text-6xl font-extrabold"></div>
-    <div id="popup-text" class="text-white text-xl font-semibold max-w-xs"></div>
-  </div>
+    
+    <div id="project-modal" class="fixed inset-0 bg-black/70 hidden z-50 
+            flex items-center justify-center">
+    <div class="swiper-container-glass relative max-w-3xl w-full mx-4 p-6 
+              rounded-2xl shadow-2xl 
+              bg-white/10 border border-white/20 
+              backdrop-blur-xl">
+        <button onclick="closeModal()" class="absolute top-4 right-4 text-3xl z-10">&times;</button>
+        <h3 id="modal-title" class="text-3xl font-bold mb-6 text-center"></h3>
+        <div class="swiper mySwiper mb-6">
+            <div class="swiper-wrapper" id="modal-images"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <p id="modal-desc" class="text-base leading-relaxed text-center max-w-2xl mx-auto"></p>
+    </div>
 </div>
 
-      <div class="flex flex-col justify-start gap-2">
-        <div class="grid grid-cols-1 gap-4">
-          <div class="card p-6 flex items-center gap-4 hover:scale-105 transition-transform hover:shadow-lg">
-            <i class="fas fa-map-marker-alt text-2xl text-[#F4FEFE]"></i>
-            <div>
-              <p class="text-[#B4C3CC] text-sm">Location</p>
-              <p class="text-[#F4FEFE] font-semibold">Surabaya, Indonesia</p>
-            </div>
-          </div>
-        </div>
-        <div class="flex gap-6 mt-4 justify-center md:justify-start">
-          <a href="https://instagram.com/husniisy" target="_blank" class="text-[#F4FEFE] hover:text-[#B4C3CC] transition-colors text-3xl hover:scale-110 transform">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://wa.me/082331332723" target="_blank" class="text-[#F4FEFE] hover:text-[#B4C3CC] transition-colors text-3xl hover:scale-110 transform">
-            <i class="fab fa-whatsapp"></i>
-          </a>
-          <a href="https://github.com/username" target="_blank" class="text-[#F4FEFE] hover:text-[#B4C3CC] transition-colors text-3xl hover:scale-110 transform">
-            <i class="fab fa-github"></i>
-          </a>
-         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=husnisy2005@gmail.com" target="_blank"
-          class="inline-block text-[#F4FEFE] hover:text-[#B4C3CC] transition-transform duration-200 text-3xl hover:scale-110">
-          <i class="fas fa-envelope"></i>
-        </a>
-        </div>
-       <a href="#"
-            onclick="sendWhatsapp()"
-            class="mt-6 inline-block px-8 py-3 rounded-full font-medium btn-glow bg-[#F4FEFE] text-[#1E3A46] text-center hover:scale-105 transition-transform">
-            Let’s Collaborate
-        </a>
-      </div>
+<div id="popup" class="fixed inset-0 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-50">
+    <div class="p-8 flex items-center gap-6 transform scale-75">
+        <div id="popup-icon" class="text-5xl font-extrabold"></div>
+        <div id="popup-text" class="text-xl font-semibold max-w-xs"></div>
+    </div>
+</div>
+
+<div id="cvContent" style="font-family: Arial, sans-serif; font-size: 10pt; color:#222; line-height:1.5;">
+
+  <!-- HEADER -->
+  <div style="display: flex; align-items: center;padding-bottom: 10px; margin-bottom: 10px;">
+    <!-- Foto -->
+    <img src="images/profile/WhatsApp Image 2025-10-02 at 13.38.07_847de16e.jpg" alt="Profile Photo" style="width:110px; height:110px; border-radius: 6px; margin-right: 20px;">
+
+    <!-- Nama & Kontak -->
+    <div>
+      <h1 style="margin:0; font-size: 16pt;">HUSNI SYAMSI</h1>
+      <p style="margin:4px 0; font-size: 9pt; color:#58717D;">+6282331332723 | husnisy2005@gmail.com </p>
+      <p style="margin:3px 0; font-size: 9pt;">Surabaya, Indonesia</p>
+      <p style="margin:3px 0; font-size: 9pt;">Telecommunication Enginner, Web Develompment</p>
+      <p style="margin:3px 0; font-size: 9pt;">A tech enthusiast with a strong foundation in telecommunications networks, IoT systems, 
+    artificial intelligence, network architecture, and web programming. 
+    Passionate about building innovative and scalable solutions to improve connectivity and accelerate digital transformation.</p>
     </div>
   </div>
-</section>
-  <footer class="bg-[rgba(24,43,49,0.9)] text-[#F4FEFE] text-center py-6 border-t border-[rgba(24,43,49,0.9)]">
-    <p class="text-sm">&copy; 2025 Husni Syamsi. All rights reserved.</p>
-  </footer>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-
-    document.addEventListener('DOMContentLoaded', function() {
-    const textElement = document.getElementById('typewriter-text');
-    const words = ["IoT Systems", "Artificial Intelligence", "Web Development"];
-    let wordIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-
-    function type() {
-        const currentWord = words[wordIndex];
-        let displayText = currentWord.substring(0, charIndex);
-
-        textElement.innerHTML = displayText;
-        textElement.classList.add('typewriter-cursor');
-
-        if (!isDeleting && charIndex < currentWord.length) {
-            charIndex++;
-            setTimeout(type, 100); 
-        } else if (isDeleting && charIndex > 0) {
-            charIndex--;
-            setTimeout(type, 50); 
-        } else if (!isDeleting && charIndex === currentWord.length) {
-            isDeleting = true;
-            textElement.classList.remove('typewriter-cursor'); 
-            setTimeout(type, 1500); 
-        } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            wordIndex = (wordIndex + 1) % words.length;
-            setTimeout(type, 300); 
-        }
-    }
-    setTimeout(type, 1000); 
-});
-  (function() {
-    emailjs.init("2iAReO0m4_oNZYz8I"); 
-  })();
-
-  function sendEmail(e) {
-    e.preventDefault();
-
-    const btn = document.getElementById("send-btn");
-    const btnText = btn.querySelector(".btn-text");
-    const spinner = btn.querySelector(".spinner");
-
-  
-    btn.disabled = true;
-    btnText.classList.add("hidden");
-    spinner.classList.remove("hidden");
-
-    emailjs.sendForm("service_3usziba", "template_a7mzghc", "#contact-form")
-      .then(function() {
-        spinner.classList.add("hidden");
-        btnText.classList.remove("hidden");
-        btnText.innerText = "Send Message";
-        btn.disabled = false;
-
-        document.getElementById("contact-form").reset();
-        showPopup(true, "Pesan berhasil terkirim!");
-      }, function(error) {
-        spinner.classList.add("hidden");
-        btnText.classList.remove("hidden");
-        btn.disabled = false;
-        showPopup(false, `Gagal mengirim: ${error.text}`);
-      });
-  }
-
-function showPopup(success, message) {
-    const popup = document.getElementById("popup");
-    const icon = document.getElementById("popup-icon");
-    const text = document.getElementById("popup-text");
-
-    text.innerText = message;
-
-    if(success){
-      icon.innerHTML = "✔"; 
-      icon.classList.remove("text-red-500");
-      icon.classList.add("text-green-500");
-    } else {
-      icon.innerHTML = "✖"; 
-      icon.classList.remove("text-green-500");
-      icon.classList.add("text-red-500");
-    }
-
-    popup.classList.add("show");
-    setTimeout(() => {
-      popup.classList.remove("show");
-    }, 2500);
-  }
 
 
-  
-    let lastScroll = 0;
-    const navbar = document.getElementById('navbar');
+  <!-- Work Experience -->
+  <h2 style="font-bold font-size: 11pt; margin-top: 20px; border-bottom: 1px solid #000; padding-bottom: 4px;">Work Experiences</h2>
+  <ul style="margin-left: 20px; font-size: 9pt;">
+    <li><strong>Automatic Crossing Project</strong> (AI & IoT) – Developed an AI-based pedestrian crossing detection system using YOLOv8 for real-time monitoring.</li>
+    <li><strong>Aviation Monitoring System</strong> (Telecommunications) – Designed avionics monitoring and performance testing systems for navigation aids (DVOR, DME, ILS, Radar).</li>
+    <li><strong>E-Commerce Platform</strong> (Web Development) – Built a complete online shopping system (catalog, wishlist, cart, admin dashboard) using Laravel.</li>
+    <li><strong>Technician (AirNav Indonesia)</strong> – create technical websites and also maintain navigation and communication equipment at Juanda airport.</li>
 
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.pageYOffset;
-      if (currentScroll > lastScroll) {
-        navbar.style.top = "-80px"; 
-      } else {
-        navbar.style.top = "0"; 
-      }
-      lastScroll = currentScroll;
+  </ul>
+
+  <!-- Education -->
+  <h2 style="font-bold font-size: 11pt; margin-top: 20px; border-bottom: 1px solid #000; padding-bottom: 4px;">Education Level</h2>
+  <ul style="margin-left: 20px; font-size: 9pt;">
+    <li><strong>Telecommunications Engineering (Ongoing)</strong> – Focus on networks, IoT, and AI.</li>
+    <li><strong>SMA Negeri 1 Sidayu</strong> – MIPA</li>
+  </ul>
+
+
+  <!-- Skills & Achievements -->
+  <h2 style="font-size: 11pt; margin-top: 20px; border-bottom: 1px solid #000; padding-bottom: 4px;">Skills, Achievements & Other Experience</h2>
+  <ul style="margin-left: 20px; font-size: 9pt;">
+    <li><strong>Skills:</strong> IoT Systems, Artificial Intelligence, Python, Laravel, JavaScript, HTML/CSS, Tailwind, Git/GitHub, Network Architecture (DVOR, DME, ILS, Radar).</li>
+    <li><strong>Achievements:</strong> Web Development BNSP Certification (2023), Full-Stack Development (Laravel, Node.js, Express), Networking & IT Support Fundamentals.</li>
+    <li><strong>Soft Skills:</strong> Problem Solving, Teamwork, Communication, Time Management, Fast Learner.</li>
+  </ul>
+
+</div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const canvas = document.getElementById('matrix-bg');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            // --- RESPONSIVE OPTIMIZATION for Matrix BG ---
+            const isMobile = window.innerWidth <= 768;
+            const fontSize = isMobile ? 12 : 16;
+            const intervalSpeed = isMobile ? 50 : 33; // Slower on mobile
+
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let columns = canvas.width / fontSize;
+            const drops = [];
+
+            for (let x = 0; x < columns; x++) drops[x] = 1;
+
+            function drawMatrix() {
+                ctx.fillStyle = 'rgba(10, 10, 15, 0.05)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--color-accent');
+                ctx.font = fontSize + 'px monospace';
+                for (let i = 0; i < drops.length; i++) {
+                    const text = characters.charAt(Math.floor(Math.random() * characters.length));
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                    drops[i]++;
+                }
+            }
+            setInterval(drawMatrix, intervalSpeed);
+
+            window.addEventListener('resize', () => {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+                columns = canvas.width / fontSize;
+                while(drops.length < columns) drops.push(1);
+                while(drops.length > columns) drops.pop();
+            });
+
+            // --- Page Transition Logic ---
+            const navItems = document.querySelectorAll('.nav-item, .btn[data-target]');
+            navItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = item.dataset.target + '-section';
+                    const currentActive = document.querySelector('.content-section.active');
+                    const nextActive = document.getElementById(targetId);
+                    if (nextActive && !nextActive.classList.contains('active')) {
+                        if (currentActive) {
+                            gsap.to(currentActive, { opacity: 0, x: -100, duration: 0.8, ease: 'power3.inOut', onComplete: () => currentActive.classList.remove('active') });
+                        }
+                        nextActive.style.transform = 'translateX(100%)';
+                        nextActive.classList.add('active');
+                        gsap.to(nextActive, { opacity: 1, x: 0, duration: 0.8, ease: 'power3.inOut', delay: 0.2 });
+                        
+                        document.querySelector('.nav-item.active')?.classList.remove('active');
+                        document.querySelector(`.nav-item[data-target="${item.dataset.target}"]`)?.classList.add('active');
+                    }
+                });
+            });
+
+            
+
+            // --- Your original, unmodified JS functions ---
+          (function() { emailjs.init("2iAReO0m4_oNZYz8I"); })();
+    function sendEmail(e) {
+        e.preventDefault();
+        const btn = document.getElementById("send-btn"), btnText = btn.querySelector(".btn-text"), spinner = btn.querySelector(".spinner");
+        btn.disabled = true; btnText.classList.add("hidden"); spinner.classList.remove("hidden");
+        emailjs.sendForm("service_3usziba", "template_a7mzghc", "#contact-form")
+            .then(() => {
+                showPopup(true, "Your message has been sent successfully!");
+                document.getElementById("contact-form").reset();
+            }, (error) => {
+                showPopup(false, `Failed to send message: ${error.text || error}`);
+            }).finally(() => {
+                btn.disabled = false; btnText.classList.remove("hidden"); spinner.classList.add("hidden");
+            });
+    }
+        });
+
+        function showPopup(success, message) {
+        const popup = document.getElementById("popup"), icon = document.getElementById("popup-icon"), text = document.getElementById("popup-text");
+        text.innerText = message;
+        icon.innerHTML = success ? "✔" : "✖"; icon.style.color = success ? 'var(--color-accent)' : '#EF4444';
+        popup.classList.add("show");
+        setTimeout(() => { popup.classList.remove("show"); }, 3000);
+    }
+
+    // Project Modal & Swiper
+    let swiperInstance;
+    function openModal(title, images, desc) {
+        document.getElementById('project-modal').classList.remove('hidden'); document.getElementById('project-modal').classList.add('flex');
+        document.getElementById('modal-title').textContent = title;
+        document.getElementById('modal-desc').textContent = desc;
+        const imagesContainer = document.getElementById('modal-images');
+        imagesContainer.innerHTML = "";
+        images.forEach(src => { imagesContainer.innerHTML += `<div class="swiper-slide"><img src="${src}" class="w-full h-auto max-h-[60vh] object-contain" alt="Project Image" /></div>`; });
+        if (swiperInstance) { swiperInstance.destroy(true, true); }
+        swiperInstance = new Swiper(".mySwiper", { loop: true, autoplay: { delay: 3000, disableOnInteraction: false }, pagination: { el: ".swiper-pagination", clickable: true }, navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }, });
+    }
+    function closeModal() {
+        document.getElementById('project-modal').classList.add('hidden'); document.getElementById('project-modal').classList.remove('flex');
+        if (swiperInstance) { swiperInstance.autoplay.stop(); }
+    }
+
+        document.getElementById("downloadCV").addEventListener("click", () => {
+        const cv = document.getElementById("cvContent");
+        cv.style.display = "block"; // Temporarily show for rendering
+
+        const opt = {
+            margin: 0.5,
+            filename: "Husni-Syamsi-CV.pdf",
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2, useCORS: true },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+
+        html2pdf()
+            .set(opt)
+            .from(cv)
+            .toPdf()
+            .get('pdf')
+            .then((pdf) => {
+                const blobUrl = pdf.output('bloburl');
+                window.open(blobUrl, "_blank"); // Open in new tab
+                pdf.save(opt.filename); // Trigger download
+                setTimeout(() => {
+                    cv.style.display = "none"; // Hide after process
+                }, 50);
+            });
     });
-
-  
- document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.card').forEach(card => {
-      const slides = card.querySelector('.slides');
-      if (!slides) return;
-      const imgs = slides.querySelectorAll('img');
-      const n = imgs.length;
-      let currentIndex = 0;
-      let intervalId = null;
-
-      if (n <= 1) return;
-
-
-     const goTo = (index) => {
-        slides.style.transform = `translateX(-${index * 100}%)`;
-      };
-      const start = () => {
-        if (intervalId) clearInterval(intervalId);
-        intervalId = setInterval(() => {
-          currentIndex = (currentIndex + 1) % n;
-          goTo(currentIndex);
-        },4000);
-      };
-
-      const stop = () => {
-        if (intervalId) {
-          clearInterval(intervalId);
-          intervalId = null;
-        }
-      };
-      start();
-
-      card.addEventListener('mouseenter', stop);
-      card.addEventListener('mouseleave', start);
-
-      goTo(0);
-    });
-  });
-
-  window.addEventListener("load", () => {
-    setTimeout(() => {
-      document.getElementById("splash-screen").classList.add("splash-fade");
-      setTimeout(() => {
-        document.getElementById("splash-screen").remove();
-          document.getElementById("home").scrollIntoView({ behavior: "smooth" });
-      }, 1000);
-    }, 2500);
-  });
-
-   let swiper;
-
-  function openModal(title, images, desc) {
-    document.getElementById("modal-title").innerText = title;
-    document.getElementById("modal-desc").innerText = desc;
-    let imgContainer = document.getElementById("modal-images");
-    imgContainer.innerHTML = "";
-    images.forEach(src => {
-      let slide = document.createElement("div");
-      slide.className = "swiper-slide";
-      slide.innerHTML = `<img src="${src}" class="w-full rounded-lg shadow-lg">`;
-      imgContainer.appendChild(slide);
-    });
-
-    let modal = document.getElementById("project-modal");
-    modal.classList.remove("hidden");
-    modal.classList.add("flex");
-
-    if (swiper) {
-      swiper.update();
-    } else {
-      swiper = new Swiper(".mySwiper", {
-        loop: true,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-      });
-    }
-  }
-
-  function closeModal() {
-    let modal = document.getElementById("project-modal");
-    modal.classList.add("hidden");
-    modal.classList.remove("flex");
-  }
-   let swiperInstance;
-
-  function openModal(title, images, desc) {
-    document.getElementById('project-modal').classList.remove('hidden');
-    document.getElementById('modal-title').textContent = title;
-    document.getElementById('modal-desc').textContent = desc;
-
-    const imagesContainer = document.getElementById('modal-images');
-    imagesContainer.innerHTML = "";
-    images.forEach(src => {
-      imagesContainer.innerHTML += `
-        <div class="swiper-slide">
-          <img src="${src}" class="w-full h-[400px] object-contain rounded-lg" />
-        </div>`;
-    });
-
-    if (swiperInstance) {
-      swiperInstance.destroy(true, true);
-    }
-
-    swiperInstance = new Swiper(".mySwiper", {
-      loop: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-  }
-
-  function closeModal() {
-    document.getElementById('project-modal').classList.add('hidden');
-    if (swiperInstance) {
-      swiperInstance.autoplay.stop();
-    }
-  }
-  function sendWhatsapp() {
+    function sendWhatsapp() {
     let phone = "6282331332723"; 
     let message = "Halo Husni, saya tertarik untuk kolaborasi dengan Anda.";
     let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
     window.open(url, "_blank");
   }
-
-  </script>
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    </script>
 </body>
 </html>
