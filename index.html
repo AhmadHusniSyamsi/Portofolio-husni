@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="images/profile/Screenshot 2025-09-29 204916.png">
-    <title>Portofolio Husni - Digital Rain (Responsive)</title>
+    <title>Portfolio Husni</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -15,12 +15,11 @@
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
     <style>
-        /* === "DIGITAL RAIN" RESPONSIVE THEME by Gemini === */
         :root {
             --color-bg: #0A0A0F;
             --color-text-primary: #E0E0E0;
             --color-text-secondary: #8899AA;
-            --color-accent: #00BCD4; /* Cyan */
+            --color-accent: #00BCD4;
             --color-surface: #1C2030;
             --font-main: 'Space Grotesk', sans-serif;
         }
@@ -45,7 +44,6 @@
 
         #main-container { display: flex; height: 100vh; }
 
-        /* --- Vertical Nav Blade (Desktop) --- */
         #nav-blade {
             width: 80px;
             background-color: rgba(10, 10, 15, 0.6);
@@ -86,11 +84,11 @@
             box-shadow: 0 0 10px var(--color-accent);
         }
 
-        /* Tombol navigasi Swiper putih, bulat, clean */
+       
 .swiper-button-next,
 .swiper-button-prev {
-    color: white; /* ikon panah putih */
-    background: rgba(255, 255, 255, 0.1); /* sedikit transparan */
+    color: white; 
+    background: rgba(255, 255, 255, 0.1); 
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -110,25 +108,21 @@
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
-    font-size: 18px; /* ukuran panah */
+    font-size: 18px;
     font-weight: bold;
 }
 .swiper-pagination-bullet {
-    background: white; /* warna titik */
-    opacity: 0.5;      /* transparansi default */
+    background: white; 
+    opacity: 0.5;      
 }
 
 .swiper-pagination-bullet-active {
-    background: white; /* warna titik aktif */
+    background: white;
     opacity: 1;
 }
 
-/* Posisikan tombol di luar slide */
 .swiper-button-next { right: -20px; }
 .swiper-button-prev { left: -20px; }
-
-
-        /* --- Content Area & Transitions --- */
         #content-area { flex-grow: 1; position: relative; overflow: hidden; }
         .content-section {
             position: absolute;
@@ -173,11 +167,9 @@
         .project-image-placeholder { height: 180px; background-color: #2D3748; border-radius: 4px; margin-bottom: 1.5rem; overflow: hidden; }
         .project-image-placeholder img { width: 100%; height: 100%; object-fit: cover; }
         
-        /* === RESPONSIVE STYLES for Mobile (max-width: 768px) === */
         @media (max-width: 768px) {
             #main-container { flex-direction: column; }
             
-            /* --- Bottom Navigation for Mobile --- */
             #nav-blade {
                 width: 100%;
                 height: 70px;
@@ -201,19 +193,16 @@
                 top: 0;
                 left: 0;
             }
-
-            /* --- Adjust Content Area for Bottom Nav --- */
             .content-section {
-                padding: 2rem 1.5rem 80px 1.5rem; /* Add padding at the bottom */
+                padding: 2rem 1.5rem 80px 1.5rem; 
             }
 
-            /* --- Adjust Typography for Mobile --- */
             h1 { font-size: 2.5rem; }
             h2 { font-size: 1.75rem; }
             p { font-size: 1rem; }
             .project-card h3 { font-size: 1.5rem; }
             
-            /* --- Adjust Layouts for Mobile --- */
+            
             #about-section .grid {
                 grid-template-columns: 1fr;
             }
@@ -225,24 +214,24 @@
                 font-size: 0.8rem;
             }
         }
-         #cvContent {
-            display: none;
-            background-color: white !important;
-            color: black !important;
-            padding: 30px;
-            width: 210mm;
-            min-height: 297mm;
-            box-shadow: none;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            font-family: Arial, sans-serif;
-            font-size: 11pt;
-        }
-        #cvContent h1 { color: #0A192F !important; font-size: 24pt; margin-bottom: 5px ;   }
-        #cvContent h2 { color: #0A192F !important; font-size: 16pt; border-bottom: 1px solid #000000ff; padding-bottom: 5px; margin-top: 20px; }
-        #cvContent p, #cvContent ul li { color: #000000ff !important; line-height: 1.5; margin-bottom: 5px; }
-        #cvContent ul { list-style-type: disc; margin-left: 20px;  }
-        #cvContent strong { font-weight: bold; }
+ #cvContent {
+    display: none;
+    background-color: white !important;
+    color: black !important;
+    padding: 30px;
+    width: 210mm;
+    min-height: 297mm;
+    box-shadow: none;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    font-family: Arial, sans-serif;
+    font-size: 11pt;
+}
+#cvContent h1 { color: #000000ff !important; font-size: 24pt; margin-bottom: 5px ;   }
+#cvContent h2 { color: #000000ff !important; font-size: 16pt; border-bottom: 1px solid #000000ff; padding-bottom: 5px; margin-top: 20px; }
+#cvContent p, #cvContent ul li { color: #000000ff !important; line-height: 1.5; margin-bottom: 5px; }
+#cvContent ul { list-style-type: disc; margin-left: 20px;  }
+#cvContent strong { font-weight: bold; }
 .social-icon {
     display: inline-flex;
     align-items: center;
@@ -262,11 +251,9 @@
     transform: scale(1.1);
 }
 
-/* Skill Icon */
 .skill-icon { transition: transform 0.3s ease; }
 .skill-icon:hover { transform: scale(1.2); }
 
-/* Horizontal scrolling animation */
 @keyframes scroll {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
@@ -279,78 +266,127 @@
     opacity: 1;
 }
 .btn span {
-    position: relative; /* pastikan berada di atas pseudo-element */
+    position: relative; 
     z-index: 1;
     transition: color 0.4s;
 }
 
 .btn:hover span {
-    color: #000000; /* hitam saat hover */
+    color: #000000;
+}
+
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    font-family: var(--font-main);
+    }
+@keyframes splash-appear {
+  0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+.splash-item {
+  opacity: 0;
+  animation: splash-appear 0.8s forwards;
 }
 
     </style>
 </head>
 <body>
-    
+   <div id="splash-screen" class="flex flex-col items-center justify-center min-h-screen bg-gray-900">
+    <div class="flex items-center gap-8 text-5xl mb-6 text-[#00BCD4] splash-item">
+        <i class="fas fa-code"></i>
+        <i class="fas fa-atom fa-spin" style="--fa-animation-duration: 5s;"></i>
+        <i class="fas fa-user"></i>
+    </div>
+    <h1 class="text-3xl sm:text-4xl font-light text-gray-300 mt-2 splash-item">Welcome To My</h1>
+    <h2 class="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-white to-cyan-400 text-transparent bg-clip-text mt-2 splash-item">
+        Portfolio Website
+    </h2>
+    <p class="text-lg mt-12 text-gray-400 splash-item">© Husni Syamsi</p>
+</div>
     <canvas id="matrix-bg"></canvas>
-
     <div id="main-container">
         <nav id="nav-blade">
             <a href="#home" class="nav-item active" data-target="home"><i class="fas fa-home"></i><span>Home</span></a>
             <a href="#about" class="nav-item" data-target="about"><i class="fas fa-user-astronaut"></i><span>About</span></a>
-            <a href="#projects" class="nav-item" data-target="projects"><i class="fas fa-rocket"></i><span>Projects</span></a>
+            <a href="#projects" class="nav-item" data-target="projects"><i class="fas fa-code"></i><span>Projects</span></a>
             <a href="#contact" class="nav-item" data-target="contact"><i class="fas fa-at"></i><span>Contact</span></a>
         </nav>
-
-        <div id="content-area">
-        <section id="home-section" class="content-section active flex flex-col items-center justify-start text-center px-4 sm:px-6 md:px-12 pt-12 pb-12 ">
+<div id="content-area">
+<section id="home-section"  class="content-section active flex flex-col items-center justify-start text-center px-4 sm:px-6 md:px-12 pt-12 pb-12 ">
     <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">Husni Syamsi</h1>
-    <p class="text-lg sm:text-xl md:text-2xl max-w-2xl mt-4 text-gray-300">Crafting elegant solutions at the intersection of IoT, AI, and advanced web development.</p>
+        <p class="text-lg sm:text-xl md:text-2xl max-w-2xl mt-4 text-gray-300">Crafting elegant solutions at the intersection of IoT, AI, and advanced web development.</p>
     <div class="mt-8 sm:mt-12 flex flex-col sm:flex-row gap-4 sm:gap-6">
         <a href="#projects" class="btn" data-target="projects"><span>Explore My Work</span></a>
-        <button id="downloadCV" class="btn"><span>Download CV</span></button>
+    <button id="downloadCV" class="btn"><span>Download CV</span></button>
+</div>
+<div class="max-w-7xl mx-auto text-center mt-12 sm:mt-20 w-full">
+<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-14 text-[#F4FEFE]">Skills</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-12">
+    <a href="#" class="block " data-target="projects">
+    <div class="card p-4 sm:p-6 bg-transparent border-2 border-[#00BCD4] rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:scale-105 cursor-pointer">
+        <h3 class="text-lg sm:text-xl font-semibold text-[#F4FEFE] mb-2 sm:mb-3">Internet Of Things</h3>
+        <p class="text-[#B4C3CC] text-sm sm:text-base">Developing IoT solutions that combine innovation and functionality.</p>
     </div>
-
-
-
-    <!-- === Skills Section === -->
-    <div class="max-w-7xl mx-auto text-center mt-12 sm:mt-20 w-full">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-14 text-[#F4FEFE]">Skills</h2>
-        
-        <!-- Skill Cards -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-12">
-            <div class="card p-4 sm:p-6 bg-transparent border-2 border-[#00BCD4] rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:scale-105">
-                <h3 class="text-lg sm:text-xl font-semibold text-[#F4FEFE] mb-2 sm:mb-3">Internet Of Things</h3>
-                <p class="text-[#B4C3CC] text-sm sm:text-base">Developing IoT solutions that combine innovation and functionality.</p>
-            </div>
-            <div class="card p-4 sm:p-6 bg-transparent border-2 border-[#00BCD4] rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:scale-105">
-                <h3 class="text-lg sm:text-xl font-semibold text-[#F4FEFE] mb-2 sm:mb-3">Web Development</h3>
-                <p class="text-[#B4C3CC] text-sm sm:text-base">Optimized websites, simple and reliable.</p>
-            </div>
-            <div class="card p-4 sm:p-6 bg-transparent border-2 border-[#00BCD4] rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:scale-105">
-                <h3 class="text-lg sm:text-xl font-semibold text-[#F4FEFE] mb-2 sm:mb-3">Artificial Intelligence</h3>
-                <p class="text-[#B4C3CC] text-sm sm:text-base">Designing intelligent systems that learn, adapt, and optimize solutions.</p>
-            </div>
-        </div>
-
-        <!-- Skill Icons -->
-      <!-- Skill Icons -->
-<div class="overflow-hidden mt-16 sm:mt-8 pb-20 sm:pb-8"> <!-- pb-16 untuk mobile, sm:pb-8 untuk desktop -->
+    </a>
+    <a href="#" class="block h-full" data-target="projects">
+    <div class="h-full flex flex-col  card p-4 sm:p-6 bg-transparent border-2 border-[#00BCD4] rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:scale-105">
+        <h3 class="text-lg sm:text-xl font-semibold text-[#F4FEFE] mb-2 sm:mb-3">Web Development</h3>
+        <p class="text-[#B4C3CC] text-sm sm:text-base">Optimized websites, simple and reliable.</p>
+    </div>
+    </a>
+    <a href="#" class="block " data-target="projects">
+    <div class="card p-4 sm:p-6 bg-transparent border-2 border-[#00BCD4] rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:scale-105">
+        <h3 class="text-lg sm:text-xl font-semibold text-[#F4FEFE] mb-2 sm:mb-3">Artificial Intelligence</h3>
+        <p class="text-[#B4C3CC] text-sm sm:text-base">Designing intelligent systems that learn, adapt, and optimize solutions.</p>
+    </div>
+    </a>
+</div>
+<div class="overflow-hidden mt-16 sm:mt-8 pb-8 sm:pb-8"> 
     <div class="flex logo-track flex-nowrap items-center w-full animate-scroll gap-6 sm:gap-12 md:gap-20">
-        <!-- Icons -->
         <div class="flex justify-around items-center gap-6 sm:gap-12 flex-shrink-0">
-            <i class="fab fa-html5 text-4xl sm:text-5xl md:text-6xl text-orange-500"></i>
-            <i class="fab fa-css3-alt text-4xl sm:text-5xl md:text-6xl text-blue-500"></i>
-            <i class="fab fa-js text-4xl sm:text-5xl md:text-6xl text-yellow-400"></i>
-            <i class="fab fa-python text-4xl sm:text-5xl md:text-6xl text-blue-400"></i>
-            <i class="fab fa-laravel text-4xl sm:text-5xl md:text-6xl text-red-500"></i>
-            <i class="fab fa-github text-4xl sm:text-5xl md:text-6xl text-gray-300"></i>
-            <i class="fas fa-robot text-4xl sm:text-5xl md:text-6xl text-green-400"></i>
-            <i class="fas fa-wifi text-4xl sm:text-5xl md:text-6xl text-teal-400"></i>
-            <i class="fas fa-microchip text-4xl sm:text-5xl md:text-6xl text-purple-400"></i>
-            <i class="fas fa-cloud text-4xl sm:text-5xl md:text-6xl text-sky-400"></i>
+          <i class="fab fa-html5 text-4xl sm:text-5xl md:text-6xl text-orange-500"></i>
+<i class="fab fa-css3-alt text-4xl sm:text-5xl md:text-6xl text-blue-500"></i>
+<i class="fab fa-js text-4xl sm:text-5xl md:text-6xl text-yellow-400"></i>
+<i class="fab fa-python text-4xl sm:text-5xl md:text-6xl text-blue-400"></i>
+<i class="fab fa-laravel text-4xl sm:text-5xl md:text-6xl text-red-500"></i>
+<i class="fab fa-github text-4xl sm:text-5xl md:text-6xl text-gray-300"></i>
+<i class="fas fa-robot text-4xl sm:text-5xl md:text-6xl text-green-400"></i>
+<i class="fas fa-wifi text-4xl sm:text-5xl md:text-6xl text-teal-400"></i>
+<i class="fas fa-microchip text-4xl sm:text-5xl md:text-6xl text-purple-400"></i>
+<i class="fas fa-cloud text-4xl sm:text-5xl md:text-6xl text-sky-400"></i>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" 
+     alt="MySQL" class="w-12 sm:w-14 md:w-16 inline-block">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" 
+     class="w-12 sm:w-14 md:w-16 inline-block">
+  <path fill="#38BDF8" d="M24 9.5c-6.667 0-10.833 3.333-12.5 10 
+        2.5-3.333 5.417-4.583 8.75-3.75 
+        1.902.475 3.26 1.854 4.75 3.375 
+        2.417 2.448 5.208 4.583 10 4.583 
+        6.667 0 10.833-3.333 12.5-10 
+        -2.5 3.333-5.417 4.583-8.75 3.75 
+        -1.902-.475-3.26-1.854-4.75-3.375 
+        -2.417-2.448-5.208-4.583-10-4.583zM11.5 23.708c-6.667 0-10.833 3.333-12.5 10 
+        2.5-3.333 5.417-4.583 8.75-3.75 
+        1.902.475 3.26 1.854 4.75 3.375 
+        2.417 2.448 5.208 4.583 10 4.583 
+        6.667 0 10.833-3.333 12.5-10 
+        -2.5 3.333-5.417 4.583-8.75 3.75 
+        -1.902-.475-3.26-1.854-4.75-3.375 
+        -2.417-2.448-5.208-4.583-10-4.583z"/>
+</svg>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" 
+     alt="C++" class="w-12 sm:w-14 md:w-16 inline-block">
         </div>
-        <!-- Duplicate for continuous scroll -->
         <div class="flex justify-around items-center gap-6 sm:gap-12 flex-shrink-0">
             <i class="fab fa-html5 text-4xl sm:text-5xl md:text-6xl text-orange-500"></i>
             <i class="fab fa-css3-alt text-4xl sm:text-5xl md:text-6xl text-blue-500"></i>
@@ -362,41 +398,110 @@
             <i class="fas fa-wifi text-4xl sm:text-5xl md:text-6xl text-teal-400"></i>
             <i class="fas fa-microchip text-4xl sm:text-5xl md:text-6xl text-purple-400"></i>
             <i class="fas fa-cloud text-4xl sm:text-5xl md:text-6xl text-sky-400"></i>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" 
+                alt="MySQL" class="w-12 sm:w-14 md:w-16 inline-block">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" 
+                class="w-12 sm:w-14 md:w-16 inline-block">
+            <path fill="#38BDF8" d="M24 9.5c-6.667 0-10.833 3.333-12.5 10 
+                    2.5-3.333 5.417-4.583 8.75-3.75 
+                    1.902.475 3.26 1.854 4.75 3.375 
+                    2.417 2.448 5.208 4.583 10 4.583 
+                    6.667 0 10.833-3.333 12.5-10 
+                    -2.5 3.333-5.417 4.583-8.75 3.75 
+                    -1.902-.475-3.26-1.854-4.75-3.375 
+                    -2.417-2.448-5.208-4.583-10-4.583zM11.5 23.708c-6.667 0-10.833 3.333-12.5 10 
+                    2.5-3.333 5.417-4.583 8.75-3.75 
+                    1.902.475 3.26 1.854 4.75 3.375 
+                    2.417 2.448 5.208 4.583 10 4.583 
+                    6.667 0 10.833-3.333 12.5-10 
+                    -2.5 3.333-5.417 4.583-8.75 3.75 
+                    -1.902-.475-3.26-1.854-4.75-3.375 
+                    -2.417-2.448-5.208-4.583-10-4.583z"/>
+            </svg>
         </div>
     </div>
 </div>
-
+ <div class="bg-dark  mt-6 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4  pb-20 sm:pb-8 sm:gap-6">
+     <div class="p-3 bg-dark border border-[#00BCD4] rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform text-center text-white">
+      Problem Solving
+    </div>
+     <div class="p-3 bg-dark border border-[#00BCD4] rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform text-center text-white">
+      Teamwork
+    </div>
+     <div class="p-3 bg-dark border border-[#00BCD4] rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform text-center text-white">
+      Communication
+    </div>
+    <div class="p-3 bg-dark border border-[#00BCD4] rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform text-center text-white">
+      Time Management
+    </div>
+    <div class="p-3 bg-dark border border-[#00BCD4] rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform text-center text-white">
+       Fast Learner
+    </div>
+    <div class="p-3  border border-[#00BCD4] rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform text-center text-white">
+      CSS3
+    </div>
+    <div class="p-3 border border-[#00BCD4] rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform text-center text-white">
+      JavaScript
+    </div>
+    <div class="p-3 border border-[#00BCD4] rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform text-center text-white">
+      Python
+    </div>
+    <div class="p-3 border border-[#00BCD4] rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform text-center text-white">
+      Laravel
+    </div>
+    <div class="p-3  border border-[#00BCD4] rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform text-center text-white">
+      GitHub
+    </div>
+    <div class="p-3  border border-[#00BCD4] rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform text-center text-white">
+      AI
+    </div>
+    <div class="p-3  border border-[#00BCD4] rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform text-center text-white">
+      Networking
+    </div>
+    <div class="p-3  border border-[#00BCD4] rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform text-center text-white">
+      Microcontrollers
+    </div>
+    <div class="p-3  border border-[#00BCD4] rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform text-center text-white">
+      MySQL
+    </div>
+    <div class="p-3  border border-[#00BCD4] rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform text-center text-white">
+      C++
+    </div>
+  </div>
+</div>
     </div>
 </section>
 
+<section id="about-section" class="content-section">
+    <div class="max-w-4xl mx-auto">
+        <h2>About Me</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10">
+            <div>
+                <p class="mb-6">Hello! I'm Husni, a developer driven by curiosity and a passion for creating impactful technology. My journey began with exploring telecommunication systems, leading me to a deep dive into the fascinating worlds of AI, IoT, and modern web frameworks.</p>
+                <p>I thrive on turning complex problems into intuitive and high-performing applications. Whether it's optimizing data flows for smart devices or building intelligent systems, I'm always looking for innovative ways to leverage technology.</p>
+                 <div class="flex gap-4 mt-6">
+        <a href="https://github.com/username" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/username" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        <a href="https://wa.me/6282331332723" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://instagram.com/husniisy" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=husnisy2005@gmail.com&su=Portfolio%20Inquiry&body=Hello%20Husni,%0D%0A%0D%0AI%20would%20like%20to%20discuss%20a%20potential%20collaboration%20regarding%20your%20projects.%0D%0A%0D%0ARegards," 
+        target="_blank" 
+        class="social-icon">
+        <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+            </div>
+            <div>
+            <div class=" w-full aspect-square overflow-hidden rounded-lg">
+                <img src="images/profile/WhatsApp Image 2025-09-28 at 14.52.23_1e9d46dc.jpg" alt="Husni Syamsi Profile" class="w-full h-full object-cover">
+            </div>
+        </div>
+    </div>
+</section>
 
-
-            <section id="about-section" class="content-section">
-                <div class="max-w-4xl mx-auto">
-                    <h2>About Me</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10">
-                        <div>
-                            <p class="mb-6">Hello! I'm Husni, a developer driven by curiosity and a passion for creating impactful technology. My journey began with exploring telecommunication systems, leading me to a deep dive into the fascinating worlds of AI, IoT, and modern web frameworks.</p>
-                            <p>I thrive on turning complex problems into intuitive and high-performing applications. Whether it's optimizing data flows for smart devices or building intelligent systems, I'm always looking for innovative ways to leverage technology.</p>
-                             <div class="flex gap-4 mt-6">
-                    <a href="https://github.com/username" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com/in/username" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://whatsapp.com/username" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://instagram.com/husniisy" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="mailto:husnisy2005@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
-                </div>
-                        </div>
-                        <div>
-                        <div class=" w-full aspect-square overflow-hidden rounded-lg">
-                            <img src="images/profile/WhatsApp Image 2025-09-28 at 14.52.23_1e9d46dc.jpg" alt="Husni Syamsi Profile" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="projects-section" class="content-section">
-                <h2 class="text-center">Featured Projects</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+<section id="projects-section" class="content-section">
+        <h2 class="text-center">Featured Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 pl-4 md:pl-6 lg:pl-6">     
                         <div class="card p-4 sm:p-6 bg-transparent border-2 border-[#00BCD4] rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:scale-105">
                         <div class="project-image-placeholder"><img src="images/profile/Screenshot 2025-09-27 132113.png" alt="Automatic Crossing"></div>
                         <h3>Automatic Crossing</h3>
@@ -499,125 +604,135 @@
 </div>
 
 <div id="cvContent" style="font-family: Arial, sans-serif; font-size: 10pt; color:#222; line-height:1.5;">
-
-  <!-- HEADER -->
-  <div style="display: flex; align-items: center;padding-bottom: 10px; margin-bottom: 10px;">
-    <!-- Foto -->
-    <img src="images/profile/WhatsApp Image 2025-10-02 at 13.38.07_847de16e.jpg" alt="Profile Photo" style="width:110px; height:110px; border-radius: 6px; margin-right: 20px;">
-
-    <!-- Nama & Kontak -->
+  <div style="display: flex; align-items: flex-start; center;padding-bottom: 10px; margin-bottom: 5px;">
+    <img src="images/profile/WhatsApp Image 2025-10-02 at 13.38.07_847de16e.jpg" alt="Profile Photo" style="width:130px; height:130px; border-radius: 6px; margin-right: 20px; rounded-0">
     <div>
-      <h1 style="margin:0; font-size: 16pt;">HUSNI SYAMSI</h1>
-      <p style="margin:4px 0; font-size: 9pt; color:#58717D;">+6282331332723 | husnisy2005@gmail.com </p>
-      <p style="margin:3px 0; font-size: 9pt;">Surabaya, Indonesia</p>
-      <p style="margin:3px 0; font-size: 9pt;">Telecommunication Enginner, Web Develompment</p>
-      <p style="margin:3px 0; font-size: 9pt;">A tech enthusiast with a strong foundation in telecommunications networks, IoT systems, 
-    artificial intelligence, network architecture, and web programming. 
-    Passionate about building innovative and scalable solutions to improve connectivity and accelerate digital transformation.</p>
+    <h1 style="margin:0; font-size: 13pt; font-weight: bold; color: #000;">HUSNI SYAMSI</h1>
+      <p style="margin:4px 0; font-size: 9pt; color:#58717D;">+6282331332723 | husnisy2005@gmail.com | https://ahmadhusnisyamsi.github.io/Portofolio-husni/</p>
+      <p style="margin:3px 0; font-size: 9pt;">Gresik, East Java, Indonesia</p>
+      <p style="margin:3px 0; font-size: 9pt;">Telecommunication Engineering</p>
+      <p style="margin:3px 0; font-size: 9pt;">A technology engineer with a strong foundation in telecommunications networks, IoT systems, artificial intelligence, network architecture, and web programming. Passionate about building innovative and scalable solutions to improve connectivity and accelerate digital transformation.</p>
     </div>
   </div>
-
-
-  <!-- Work Experience -->
-  <h2 style="font-bold font-size: 11pt; margin-top: 20px; border-bottom: 1px solid #000; padding-bottom: 4px;">Work Experiences</h2>
+<h2 style="font-size: 13pt; font-weight: bold; color: #000; margin-top: 5px; border-bottom: 1px solid #000; padding-bottom: 4px;">
+  Work Experiences
+</h2>
   <ul style="margin-left: 20px; font-size: 9pt;">
-    <li><strong>Automatic Crossing Project</strong> (AI & IoT) – Developed an AI-based pedestrian crossing detection system using YOLOv8 for real-time monitoring.</li>
-    <li><strong>Aviation Monitoring System</strong> (Telecommunications) – Designed avionics monitoring and performance testing systems for navigation aids (DVOR, DME, ILS, Radar).</li>
-    <li><strong>E-Commerce Platform</strong> (Web Development) – Built a complete online shopping system (catalog, wishlist, cart, admin dashboard) using Laravel.</li>
-    <li><strong>Technician (AirNav Indonesia)</strong> – create technical websites and also maintain navigation and communication equipment at Juanda airport.</li>
-
+    <li><strong>Automatic Crossing Project</strong> (AI & IoT) – Developing an AI-based pedestrian crossing detection system using YOLOv8 and ultrasonic sensors for real-time monitoring using the web.</li>
+    <li><strong> Air Quality & Dust Detector Indoor Project </strong> – Developing an indoor air quality and dust detection system using the MQ-135 and GP2Y1010AU0F sensor based on IoT and using real-time web monitoring.</li>
+    <li><strong>E-Commerce Platform Project</strong> – Built a complete online shopping system (catalog, wishlist, cart, and admin dashboard) using Laravel.</li>
+    <li style="margin-bottom: 8px;">
+    <span style="display: block;">
+        <strong>AirNav Indonesia</strong> – Perum LPPNPI AirNav Indonesia Kantor Cabang Surabaya- Juanda Airport, Surabaya
+    </span>
+    <span style="display: block; font-style: italic; margin-bottom: 3px;">
+        Internship Technician
+    </span>
+    <ul style="margin: 0 0 0 18px; font-size: 9pt;">
+        <li>Designing a web-based avionics monitoring system and performance testing for navigation aids (DVOR, DME, ILS, Radar).</li>
+        <li>Maintain navigation and communication equipment</li>
+    </ul>
+    </li>
   </ul>
-
-  <!-- Education -->
-  <h2 style="font-bold font-size: 11pt; margin-top: 20px; border-bottom: 1px solid #000; padding-bottom: 4px;">Education Level</h2>
+<h2 style="font-size: 13pt; font-weight: bold; color: #000; margin-top: 5px; border-bottom: 1px solid #000; padding-bottom: 4px;">Education Level</h2>
   <ul style="margin-left: 20px; font-size: 9pt;">
-    <li><strong>Telecommunications Engineering (Ongoing)</strong> – Focus on networks, IoT, and AI.</li>
-    <li><strong>SMA Negeri 1 Sidayu</strong> – MIPA</li>
+<li style=" display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+  <span><strong style="font-size: 10pt;">State Polytechnic of Malang</strong><br> 
+  <em>Telecommunication Engineering – Focus on networks, IoT, and AI.</em></span>
+  <span style="font-size: 9pt; color: #000;">2022 - Present</span>
+</li>
+    <li style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;"> 
+  <span>
+    <strong>SMA Negeri 1 Sidayu</strong><br>
+    <em>High School Diploma IPA</em>
+  </span>
+  <span style="font-size: 9pt; color: #000;">2019 - 2022</span>
+</li>
   </ul>
-
-
-  <!-- Skills & Achievements -->
-  <h2 style="font-size: 11pt; margin-top: 20px; border-bottom: 1px solid #000; padding-bottom: 4px;">Skills, Achievements & Other Experience</h2>
+  <h2 style=" font-size: 13pt; font-weight: bold; color: #000000; margin-top: 5px; border-bottom: 1.5px solid #000000; padding-bottom: 4px;">Skills & Other Experience</h2>
   <ul style="margin-left: 20px; font-size: 9pt;">
-    <li><strong>Skills:</strong> IoT Systems, Artificial Intelligence, Python, Laravel, JavaScript, HTML/CSS, Tailwind, Git/GitHub, Network Architecture (DVOR, DME, ILS, Radar).</li>
-    <li><strong>Achievements:</strong> Web Development BNSP Certification (2023), Full-Stack Development (Laravel, Node.js, Express), Networking & IT Support Fundamentals.</li>
+    <li><strong>Skills:</strong> IoT Systems, Artificial Intelligence, C++, Python, Flask, Laravel, JavaScript, HTML5, CSS3, Tailwind, My SQL, Git/GitHub,Microcontrollers, Network Architecture .</li>
     <li><strong>Soft Skills:</strong> Problem Solving, Teamwork, Communication, Time Management, Fast Learner.</li>
   </ul>
 
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const splashScreen = document.getElementById('splash-screen');
+    const mainContainer = document.getElementById('main-container');
 
-
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-
-            const canvas = document.getElementById('matrix-bg');
-            const ctx = canvas.getContext('2d');
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-
-            // --- RESPONSIVE OPTIMIZATION for Matrix BG ---
-            const isMobile = window.innerWidth <= 768;
-            const fontSize = isMobile ? 12 : 16;
-            const intervalSpeed = isMobile ? 50 : 33; // Slower on mobile
-
-            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-            let columns = canvas.width / fontSize;
-            const drops = [];
-
-            for (let x = 0; x < columns; x++) drops[x] = 1;
-
-            function drawMatrix() {
-                ctx.fillStyle = 'rgba(10, 10, 15, 0.05)';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-                ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--color-accent');
-                ctx.font = fontSize + 'px monospace';
-                for (let i = 0; i < drops.length; i++) {
-                    const text = characters.charAt(Math.floor(Math.random() * characters.length));
-                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-                    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
-                    drops[i]++;
-                }
+    setTimeout(() => {
+        gsap.to(splashScreen, {
+            opacity: 0,
+            duration: 1.5, 
+            ease: 'power2.inOut',
+            onComplete: () => {
+                splashScreen.style.display = 'none';
+                mainContainer.style.display = 'flex'; 
             }
-            setInterval(drawMatrix, intervalSpeed);
+        });
+    }, 3000);
 
-            window.addEventListener('resize', () => {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-                columns = canvas.width / fontSize;
-                while(drops.length < columns) drops.push(1);
-                while(drops.length > columns) drops.pop();
-            });
+    const canvas = document.getElementById('matrix-bg');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const isMobile = window.innerWidth <= 768;
+    const fontSize = isMobile ? 12 : 16;
+    const intervalSpeed = isMobile ? 50 : 33; 
 
-            // --- Page Transition Logic ---
-            const navItems = document.querySelectorAll('.nav-item, .btn[data-target]');
-            navItems.forEach(item => {
-                item.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetId = item.dataset.target + '-section';
-                    const currentActive = document.querySelector('.content-section.active');
-                    const nextActive = document.getElementById(targetId);
-                    if (nextActive && !nextActive.classList.contains('active')) {
-                        if (currentActive) {
-                            gsap.to(currentActive, { opacity: 0, x: -100, duration: 0.8, ease: 'power3.inOut', onComplete: () => currentActive.classList.remove('active') });
-                        }
-                        nextActive.style.transform = 'translateX(100%)';
-                        nextActive.classList.add('active');
-                        gsap.to(nextActive, { opacity: 1, x: 0, duration: 0.8, ease: 'power3.inOut', delay: 0.2 });
-                        
-                        document.querySelector('.nav-item.active')?.classList.remove('active');
-                        document.querySelector(`.nav-item[data-target="${item.dataset.target}"]`)?.classList.add('active');
-                    }
-                });
-            });
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    let columns = canvas.width / fontSize;
+    const drops = [];
 
-            
+    for (let x = 0; x < columns; x++) drops[x] = 1;
 
-            // --- Your original, unmodified JS functions ---
-          (function() { emailjs.init("2iAReO0m4_oNZYz8I"); })();
-    function sendEmail(e) {
+    function drawMatrix() {
+        ctx.fillStyle = 'rgba(10, 10, 15, 0.05)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--color-accent');
+        ctx.font = fontSize + 'px monospace';
+        for (let i = 0; i < drops.length; i++) {
+            const text = characters.charAt(Math.floor(Math.random() * characters.length));
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+            drops[i]++;
+        }
+    }
+    setInterval(drawMatrix, intervalSpeed);
+
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        columns = canvas.width / fontSize;
+        while(drops.length < columns) drops.push(1);
+        while(drops.length > columns) drops.pop();
+    });
+    const navItems = document.querySelectorAll('.nav-item,.block, .btn[data-target]');
+    navItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = item.dataset.target + '-section';
+            const currentActive = document.querySelector('.content-section.active');
+            const nextActive = document.getElementById(targetId);
+            if (nextActive && !nextActive.classList.contains('active')) {
+                if (currentActive) {
+                    gsap.to(currentActive, { opacity: 0, x: -100, duration: 0.8, ease: 'power3.inOut', onComplete: () => currentActive.classList.remove('active') });
+                }
+                nextActive.style.transform = 'translateX(100%)';
+                nextActive.classList.add('active');
+                gsap.to(nextActive, { opacity: 1, x: 0, duration: 0.8, ease: 'power3.inOut', delay: 0.2 });
+                
+                document.querySelector('.nav-item.active')?.classList.remove('active');
+                document.querySelector(`.nav-item[data-target="${item.dataset.target}"]`)?.classList.add('active');
+            }
+        });
+    });
+
+(function() { emailjs.init("2iAReO0m4_oNZYz8I"); })();
+    function sendEmail(e) {
         e.preventDefault();
         const btn = document.getElementById("send-btn"), btnText = btn.querySelector(".btn-text"), spinner = btn.querySelector(".spinner");
         btn.disabled = true; btnText.classList.add("hidden"); spinner.classList.remove("hidden");
@@ -640,8 +755,6 @@
         popup.classList.add("show");
         setTimeout(() => { popup.classList.remove("show"); }, 3000);
     }
-
-    // Project Modal & Swiper
     let swiperInstance;
     function openModal(title, images, desc) {
         document.getElementById('project-modal').classList.remove('hidden'); document.getElementById('project-modal').classList.add('flex');
@@ -660,14 +773,15 @@
 
         document.getElementById("downloadCV").addEventListener("click", () => {
         const cv = document.getElementById("cvContent");
-        cv.style.display = "block"; // Temporarily show for rendering
+        cv.style.display = "block"; 
 
         const opt = {
-            margin: 0.5,
+            margin: 0,
             filename: "Husni-Syamsi-CV.pdf",
             image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2, useCORS: true },
+            html2canvas: { scale: 5, useCORS: true },
             jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            
         };
 
         html2pdf()
@@ -677,10 +791,10 @@
             .get('pdf')
             .then((pdf) => {
                 const blobUrl = pdf.output('bloburl');
-                window.open(blobUrl, "_blank"); // Open in new tab
-                pdf.save(opt.filename); // Trigger download
+                window.open(blobUrl, "_blank"); 
+                pdf.save(opt.filename); 
                 setTimeout(() => {
-                    cv.style.display = "none"; // Hide after process
+                    cv.style.display = "none"; 
                 }, 50);
             });
     });
@@ -690,6 +804,10 @@
     let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
     window.open(url, "_blank");
   }
+  const items = document.querySelectorAll('.splash-item');
+items.forEach((el, i) => {
+    el.style.animationDelay = `${i * 0.3}s`;
+});
     </script>
 </body>
 </html>
